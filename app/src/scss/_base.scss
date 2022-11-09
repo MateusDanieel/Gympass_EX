@@ -7,3 +7,36 @@
 @custom-media --deskMini (width > 992px);
 @custom-media --desk (width > 1248px);
 @custom-media --deskWide (width > 1440px);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+ 
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1190px;
+    margin: 0 auto;
+    padding: 0 32px;
+
+    @media (--tabSm) {
+        padding: 0 64px;
+    }
+
+    @media (--deskWide) {
+        padding: 0;
+    }
+}
