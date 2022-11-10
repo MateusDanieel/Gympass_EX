@@ -35,6 +35,9 @@ function css() {
   return gulp
     .src([
       './node_modules/normalize.css/normalize.css',
+      './node_modules/slick-carousel/slick/slick.css',
+      './node_modules/slick-carousel/slick/slick-theme.css',
+      './node_modules/fullpage.js/dist/fullpage.css',
       './app/src/scss/*.scss'
     ])
     .pipe(concat('style.min.css'))
@@ -47,8 +50,11 @@ function css() {
 function scripts() {
   return (
     gulp.src([
+      './node_modules/jquery/dist/jquery.min.js',
+      './node_modules/slick-carousel/slick/slick.min.js',
+      './node_modules/fullpage.js/dist/fullpage.js',
+      './node_modules/fullpage.js/dist/fullpage.extensions.js',
       './app/src/js/modernizr-3.11.2.js',
-      './app/src/js/plugins.js',
       './app/src/js/main.js'
     ])
       .pipe(concat('script.min.js'))

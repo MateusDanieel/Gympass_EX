@@ -7,7 +7,24 @@
 @custom-media --deskMini (width > 992px);
 @custom-media --desk (width > 1248px);
 @custom-media --deskWide (width > 1440px);
+/*
+::-webkit-scrollbar {
+    width: 8px;
+}
 
+::-webkit-scrollbar-track {
+    background: url('../../img/noise.png') center top repeat;
+    background-size: cover;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #999;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+*/
 * {
     margin: 0;
     padding: 0;
@@ -27,31 +44,19 @@ ul {
     list-style: none;
 }
 
+html {
+
+    @media (--tabSm) {
+        background: url('../../img/bg-section.png') center top no-repeat;
+        background-size: cover;
+    }
+    
+}
+
 body {
     background: url('../../img/noise.png') center top repeat;
     background-size: contain;
 }
-
-/* width */
-::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: url('../../img/noise.png') center top repeat;
-    background-size: cover;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #999;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #777;
-  }
 
 .container {
     width: 100%;
@@ -65,13 +70,15 @@ body {
 }
 
 section {
-    padding: 152px 0 196px;
-    background: url('../../img/bg-section-mobile.png') center top no-repeat;
-    background-size: cover;
+    position: relative;
+    overflow: hidden;
 
-    @media (--tabSm) {
-        background: url('../../img/bg-section.png') center top no-repeat;
-        background-size: cover;
+    .container {
+        padding: 64px 32px;
+
+        @media (--tabSm) {
+            padding: 152px 32px 196px;
+        }
     }
 
     h2.sec-title {
@@ -169,4 +176,13 @@ section {
             
         }
     }
+}
+
+/* FULLPAGE ALT */
+.fp-warning, .fp-watermark {
+    display: none;
+}
+
+.fp-is-overflow .fp-overflow.fp-auto-height, .fp-is-overflow .fp-overflow.fp-auto-height-responsive, .fp-is-overflow>.fp-overflow {
+    overflow-x: hidden;
 }

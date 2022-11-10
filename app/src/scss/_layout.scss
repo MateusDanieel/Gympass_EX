@@ -166,8 +166,7 @@ header.sec-header {
     background-size: cover;
 
     @media (--tabSm) {
-        background: url('../../img/bg-section.png') center top no-repeat;
-        background-size: cover;
+        background: none;
     }
 
     @media (--tabSm) {
@@ -344,12 +343,9 @@ header.sec-header {
         }
     }
 }
-
+ 
 section.sec-foreword {
     .esq {
-        .intro {
-            
-        }
 
         .author-desktop {
             display: none;

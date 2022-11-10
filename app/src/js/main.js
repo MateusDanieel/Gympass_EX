@@ -1,3 +1,12 @@
+
+
+window.addEventListener('resize', function () { 
+    "use strict";
+
+    if (window.innerWidth <= 640) window.location.reload();
+    
+});
+
 // NAVBAR MENU
 (() => {
     let bt_open = document.querySelector('nav.navbar .bt-open');
@@ -34,6 +43,16 @@
             })
         });
     });
-
-    
 })();
+
+// FULLPAGE.js INIT
+new fullpage('#fullpage', {
+    licenseKey: '',
+    credits: { enabled: false, label: '', position: 'left' },
+    scrollOverflow: true, 
+    scrollOverflowMacStyle: true,
+    scrollBar:false,
+    anchors:['sec-foreword'],
+    paddingTop: '0',
+    paddingBottom: '0'
+});
