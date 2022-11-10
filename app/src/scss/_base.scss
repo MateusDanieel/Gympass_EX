@@ -26,6 +26,11 @@ ul {
     list-style: none;
 }
 
+body {
+    background: url('../../img/noise.png') center top repeat;
+    background-size: contain;
+}
+
 .container {
     width: 100%;
     max-width: 1190px;
