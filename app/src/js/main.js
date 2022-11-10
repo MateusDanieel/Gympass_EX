@@ -1,9 +1,10 @@
-// NAVBAR MENU TOGGLE 
+// NAVBAR MENU
 (() => {
     let bt_open = document.querySelector('nav.navbar .bt-open');
     let menu = document.querySelector('aside.menu');
     let bt_close = document.querySelector('aside.menu .bt-close');
     let anchors = document.querySelectorAll('aside.menu a');
+    let li = document.querySelectorAll('aside.menu .lst li');
 
     bt_open.addEventListener('click', () => {
         menu.classList.add('active');
@@ -17,10 +18,22 @@
         a.addEventListener('click', () => {
             setTimeout(() => {
                 menu.classList.remove('active');
-            }, 500)
+            }, 500);
             
         });
-    })
+    });
+
+    li.forEach((el, i, arr) => {
+        el.addEventListener('click', () => {
+            arr.forEach((arr_el, arr_i) => {
+                if (arr_i > i) {
+                    arr_el.classList.remove('active');
+                } else {
+                    arr_el.classList.add('active');
+                }
+            })
+        });
+    });
 
     
 })();
