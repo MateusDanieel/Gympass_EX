@@ -11,11 +11,6 @@ nav.navbar {
     z-index: 100;
     transition: 1s;
 
-    @media (--tabSm) {
-        padding: 30px 40px;
-    }
-
-    
     &.active {
         .bt {
             visibility: visible;
@@ -44,6 +39,11 @@ nav.navbar {
             }
         }
     }
+
+    .lst {
+        display: none;
+    }
+
 
     .bt-open {
         background-color: transparent;

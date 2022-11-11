@@ -7,24 +7,29 @@
 @custom-media --deskMini (width > 992px);
 @custom-media --desk (width > 1248px);
 @custom-media --deskWide (width > 1440px);
-/*
-::-webkit-scrollbar {
-    width: 8px;
+
+@media (--tabSm) {
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        //background: url('../../img/noise.png') center top repeat;
+        //background-size: cover;
+        background: transparent;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, .3);
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, .5);
+    }
 }
 
-::-webkit-scrollbar-track {
-    background: url('../../img/noise.png') center top repeat;
-    background-size: cover;
-}
 
-::-webkit-scrollbar-thumb {
-    background: #999;
-}
 
-::-webkit-scrollbar-thumb:hover {
-    background: #777;
-}
-*/
 * {
     margin: 0;
     padding: 0;
@@ -69,7 +74,7 @@ body {
     }
 }
 
-section {
+section.dest {
     position: relative;
     overflow: hidden;
 
@@ -78,6 +83,10 @@ section {
 
         @media (--tabSm) {
             padding: 152px 32px 196px;
+        }
+
+        @media (--desk) {
+            padding: 152px 0 196px;
         }
     }
 
@@ -176,6 +185,110 @@ section {
             
         }
     }
+}
+
+section.hoops {
+    background: #710252 url('../../img/bg-aros.png') center bottom no-repeat;
+    background-size: cover;
+    position: relative;
+
+    .menu {
+        width: 100%;
+        display: none;
+        background-color: #710252;
+
+        @media (--tabSm) {
+            display: flex;
+        }
+
+        li {
+            width: calc(100% / 8);
+
+            &.active {
+                a {
+                    font-weight: 700;
+                    border-bottom: 8px solid #FF4438;
+                }
+            }
+
+            a {
+                display: block;
+                color: #FFF;
+                padding: 20px 0 18px;
+                font-family: 'Sharp Sans';
+                font-size: 16px;
+                font-weight: 500;
+                text-align: center;
+            }
+        }
+    }
+
+    .container {
+        max-width: none;
+        padding: 0 32px;
+        height: 100vh;
+    }
+
+    .sec-index {
+        display: flex;
+        color: #F5F5FA;
+        font-family: 'Pilat Compressed';
+        line-height: 1;
+        font-weight: 500;
+        font-size: 72px;
+        margin: 32px 0 0;
+
+        span {
+            font-family: 'Nys';
+            font-weight: 700;
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            border: 2px solid #F5F5FA;
+            max-height: 56px;
+            padding: 5px 30px 0;
+            border-radius: 64px;
+            margin: 8px 0 0 30px;
+        }
+    }
+
+    .sec-title {
+        font-size: 126px;
+        font-weight: 400;
+        font-family: 'Nys';
+        color: #F5F5FA;
+        text-align: center;
+        margin: 30px 0 0;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+        margin: 0 auto;
+    
+        .sec-author {
+            display: block;
+            margin: 0 -270px -50px 11px;
+
+            span {
+                font-family: 'Sharp Sans';
+                margin: 50px 0 0;
+                display: block;
+                color: #F5F5FA;
+                line-height: 1.4;
+                font-size: 18px;
+                font-weight: 500;
+    
+                b {
+                    font-weight: 800;
+                }
+            }
+        }
+    }
+
+    
 }
 
 /* FULLPAGE ALT */
