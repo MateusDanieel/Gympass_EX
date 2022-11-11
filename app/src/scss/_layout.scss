@@ -11,11 +11,6 @@ nav.navbar {
     z-index: 100;
     transition: 1s;
 
-    @media (--tabSm) {
-        padding: 30px 40px;
-    }
-
-    
     &.active {
         .bt {
             visibility: visible;
@@ -44,6 +39,11 @@ nav.navbar {
             }
         }
     }
+
+    .lst {
+        display: none;
+    }
+
 
     .bt-open {
         background-color: transparent;
@@ -166,8 +166,7 @@ header.sec-header {
     background-size: cover;
 
     @media (--tabSm) {
-        background: url('../../img/bg-section.png') center top no-repeat;
-        background-size: cover;
+        background: none;
     }
 
     @media (--tabSm) {
@@ -344,12 +343,9 @@ header.sec-header {
         }
     }
 }
-
+ 
 section.sec-foreword {
     .esq {
-        .intro {
-            
-        }
 
         .author-desktop {
             display: none;
