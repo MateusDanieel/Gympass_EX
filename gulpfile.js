@@ -37,7 +37,7 @@ function css() {
       './node_modules/normalize.css/normalize.css',
       './node_modules/slick-carousel/slick/slick.css',
       './node_modules/slick-carousel/slick/slick-theme.css',
-      './node_modules/fullpage.js/dist/fullpage.css',
+      //'./node_modules/fullpage.js/dist/fullpage.css',
       './app/src/scss/*.scss'
     ])
     .pipe(concat('style.min.css'))
@@ -58,7 +58,7 @@ function scripts() {
       './app/src/js/main.js'
     ])
       .pipe(concat('script.min.js'))
-      //.pipe(uglify())
+      .pipe(uglify())
       .pipe(gulp.dest('app/dist/js'))
       .pipe(browsersync.stream()));
 }

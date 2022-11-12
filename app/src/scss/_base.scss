@@ -75,14 +75,37 @@ body {
 }
 
 article.hoops {
-    background: #710252 url('../../img/bg-aros.png') center bottom no-repeat;
+    background: #710252 url('../../img/bg-aros-mobile.png') center top no-repeat;
     background-size: cover;
     position: relative;
 
+    @media (--tabSm) {
+        background: #710252 url('../../img/bg-aros.png') center bottom no-repeat;
+        background-size: cover;
+    }
+
     .container {
         max-width: none;
-        padding: 80px 32px;
+        padding: 72px 32px 0;
         min-height: 100vh;
+
+        @media (--desk) {
+            padding: 80px 32px;
+        }
+    }
+
+    .sec-title {
+        font-size: 56px;
+        font-weight: 400;
+        font-family: 'Nys';
+        color: #F5F5FA;
+        text-align: center;
+        margin: 48px 0 56px;
+
+        @media (--tabSm) {
+            font-size: 126px;
+            margin: 30px 0 0;
+        }
     }
 
     .sec-index {
@@ -92,12 +115,12 @@ article.hoops {
         line-height: 1;
         font-weight: 500;
         font-size: 40px;
-        margin: 32px 0 0;
 
         @media (--tabSm) {
             font-size: 72px;
+            margin: 32px 0;
         }
-
+ 
         span {
             font-family: 'Nys';
             font-weight: 700;

@@ -96,7 +96,7 @@ window.addEventListener('resize', function () {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
     if(scrollTop > lastScrollTop || scrollTop == 0) {
-        navbar.style.marginTop='-80px';
+        navbar.style.marginTop='-80px'; 
     } else {
         navbar.style.marginTop = '0';
     }

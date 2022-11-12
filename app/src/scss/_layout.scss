@@ -396,19 +396,6 @@ header.sec-header {
 }
 
 article.sec-foreword-ant {
-    .sec-title {
-        font-size: 56px;
-        font-weight: 400;
-        font-family: 'Nys';
-        color: #F5F5FA;
-        text-align: center;
-        margin: 48px 0 56px;
-
-        @media (--tabSm) {
-            font-size: 126px;
-            margin: 30px 0 0;
-        }
-    }
 
     .wrapper {
         display: flex;
@@ -560,5 +547,20 @@ article.sec-foreword {
         img.mandala + p {
             margin: -50px 0 35px;
         }
+    }
+}
+
+article.sec-work-life-ant {
+    .sec-title {
+        
+        @media (--tabSm) {
+            font-size: 136px;
+        }   
+        
+        @media (--desk) {
+            max-width: 1137px;
+            margin: 30px auto 0;
+        }
+        
     }
 }
