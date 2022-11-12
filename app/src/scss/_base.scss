@@ -50,12 +50,12 @@ ul {
 }
 
 html {
-
+/*
     @media (--tabSm) {
         background: url('../../img/bg-section.png') center top no-repeat;
-        background-size: cover;
+        background-size: contain;
     }
-    
+*/
 }
 
 body {
@@ -124,7 +124,12 @@ article.dest {
     position: relative;
     //overflow: hidden;
 
-    .container {
+    @media (--tabSm) {
+        background: url('../../img/bg-section.png') center top no-repeat;
+        background-size: contain;
+    }
+
+    > .container {
         padding: 64px 32px;
 
         @media (--tabSm) {
@@ -229,6 +234,34 @@ article.dest {
             }
 
             
+        }
+    }
+
+    .next {
+        display: block;
+        font-family: 'Sharp Sans';
+        font-weight: 500;
+        font-size: 24px;
+        color: #F5F5FA;
+        background-color: #710252;
+        padding: 45px 0;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @media (--tabSm) {
+                justify-content: flex-start;
+            }
+        }
+
+        img {
+
+            @media (--tabSm) {
+                margin: 0 0 0 16px; 
+            }
+           
         }
     }
 }
