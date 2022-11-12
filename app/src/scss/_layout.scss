@@ -30,6 +30,11 @@ nav.navbar {
         }
     }
 
+    &.disabled {
+        opacity: 0;
+        visibility: hidden;
+    }
+
     .brand {
         img {
             width: 105px;
@@ -53,6 +58,49 @@ nav.navbar {
 
         @media (--tabSm) {
             display: none;
+        }
+    }
+}
+
+nav.navbar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+    .navigation {
+        width: 100%;
+        display: none;
+        background-color: #710252;
+
+        @media (--tabSm) {
+            display: flex;
+        }
+
+        li {
+            width: calc(100% / 8);
+
+            &.active {
+                a {
+                    font-weight: 700;
+                    border-bottom: 8px solid #FF4438;
+                }
+            }
+
+            a {
+                display: block;
+                color: #FFF;
+                padding: 20px 0 18px;
+                font-family: 'Sharp Sans';
+                font-size: 12px;
+                font-weight: 500;
+                text-align: center;
+
+                @media (--desk) {
+                    font-size: 16px;
+                }
+            }
         }
     }
 }
@@ -340,6 +388,63 @@ header.sec-header {
         
         @media (--tabSm) {
             visibility: hidden;
+        }
+    }
+}
+
+section.sec-foreword-ant {
+    .sec-title {
+        font-size: 56px;
+        font-weight: 400;
+        font-family: 'Nys';
+        color: #F5F5FA;
+        text-align: center;
+        margin: 48px 0 56px;
+
+        @media (--tabSm) {
+            font-size: 126px;
+            margin: 30px 0 0;
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin: 0 auto;
+
+        @media (--desk) {
+            flex-direction: row;
+            align-items: flex-end;
+        }
+    
+        .sec-author {
+            display: block;
+            margin: 10px auto 0 0;
+
+            @media (--desk) {
+                margin: 0 -270px -50px 11px;
+            }
+
+            span {
+                font-family: 'Sharp Sans';
+                margin: 10px 0 0;
+                display: block;
+                color: #F5F5FA;
+                line-height: 1.4;
+                font-size: 18px;
+                font-weight: 500;
+
+                @media (--desk) {
+                    margin: 50px 0 0;
+                }
+    
+                b {
+                    font-weight: 800;
+                }
+            }
         }
     }
 }

@@ -1,5 +1,3 @@
-
-
 window.addEventListener('resize', function () { 
     "use strict";
 
@@ -13,7 +11,7 @@ window.addEventListener('resize', function () {
     let menu = document.querySelector('aside.menu');
     let bt_close = document.querySelector('aside.menu .bt-close');
     let anchors = document.querySelectorAll('aside.menu a');
-    let li = document.querySelectorAll('aside.menu .lst li');
+    //let li = document.querySelectorAll('aside.menu .lst li');
 
     bt_open.addEventListener('click', () => {
         menu.classList.add('active');
@@ -31,7 +29,7 @@ window.addEventListener('resize', function () {
             
         });
     });
-
+    /*
     li.forEach((el, i, arr) => {
         el.addEventListener('click', () => {
             arr.forEach((arr_el, arr_i) => {
@@ -43,16 +41,95 @@ window.addEventListener('resize', function () {
             })
         });
     });
+    */
 })();
+ 
+const sections = document.querySelectorAll("section");
+let navLi = '';
+
+if (window.innerWidth <= 640) {
+    navLi = document.querySelectorAll("aside.menu .lst li");
+} else {
+    navLi = document.querySelectorAll(".navbar-menu .navigation li");
+}
+
+
+window.onscroll = () => {
+  var current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= sectionTop - 60) {
+      current = section.getAttribute("id"); 
+    }
+  });
+
+  navLi.forEach((li, i, arr) => {
+
+    li.classList.remove("active");
+
+    if (li.classList.contains(current)) {
+      li.classList.add("active");
+      
+      arr.forEach((el, j) => {
+        if (j > i) {
+            el.classList.remove("active");
+        } else {
+            el.classList.add("active");
+        }
+      })
+    } 
+  });
+};
 
 // FULLPAGE.js INIT
-new fullpage('#fullpage', {
-    licenseKey: '',
-    credits: { enabled: false, label: '', position: 'left' },
-    scrollOverflow: true, 
-    scrollOverflowMacStyle: true,
-    scrollBar:false,
-    anchors:['sec-foreword'],
-    paddingTop: '0',
-    paddingBottom: '0'
-});
+/*
+(() => {
+    if (window.innerWidth <= 640) {
+        new fullpage('#fullpage', {
+            licenseKey: '',
+            autoScrolling:true,
+            scrollHorizontally: true,
+            credits: { enabled: false, label: '', position: 'left' },
+            scrollOverflow: true, 
+            scrollBar:false,
+            paddingTop: '72px',
+            paddingBottom: '0'
+        });
+    } else {
+        new fullpage('#fullpage', {
+            licenseKey: '',
+            autoScrolling:true,
+            scrollHorizontally: true,
+            credits: { enabled: false, label: '', position: 'left' },
+            scrollOverflow: true, 
+            scrollBar:false,
+            
+            paddingTop: '0',
+            paddingBottom: '0'
+        });
+    }
+})();
+
+// WATCH CHANGES
+(() => {
+    const body = document.querySelector('body');
+    const navbar = document.querySelector('nav.navbar');
+
+    let observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            if (body.classList.contains('fp-viewing-1')) {
+                navbar.classList.add('disabled');
+            } else {
+                navbar.classList.remove('disabled');
+            }
+        });
+    });
+     
+    observer.observe(body, {
+        attributes: true
+    });
+})();
+
+
+*/
