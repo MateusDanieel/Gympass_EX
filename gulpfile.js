@@ -50,15 +50,15 @@ function css() {
 function scripts() {
   return (
     gulp.src([
-      './node_modules/jquery/dist/jquery.min.js',
-      './node_modules/slick-carousel/slick/slick.min.js',
-      './node_modules/fullpage.js/dist/fullpage.js',
-      './node_modules/fullpage.js/dist/fullpage.extensions.js',
+      './node_modules/jquery/dist/jquery.js',
+      './node_modules/slick-carousel/slick/slick.js',
+      //'./node_modules/fullpage.js/dist/fullpage.js',
+      //'./node_modules/fullpage.js/dist/fullpage.extensions.js',
       './app/src/js/modernizr-3.11.2.js',
       './app/src/js/main.js'
     ])
       .pipe(concat('script.min.js'))
-      .pipe(uglify())
+      //.pipe(uglify())
       .pipe(gulp.dest('app/dist/js'))
       .pipe(browsersync.stream()));
 }
