@@ -67,7 +67,8 @@ nav.navbar-menu {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 110;
+    transition: 1s;
     
     .navigation {
         width: 100%;
@@ -392,7 +393,7 @@ header.sec-header {
     }
 }
 
-section.sec-foreword-ant {
+article.sec-foreword-ant {
     .sec-title {
         font-size: 56px;
         font-weight: 400;
@@ -449,7 +450,7 @@ section.sec-foreword-ant {
     }
 }
  
-section.sec-foreword {
+article.sec-foreword {
     .esq {
 
         .author-desktop {

@@ -74,15 +74,15 @@ body {
     }
 }
 
-section.hoops {
+article.hoops {
     background: #710252 url('../../img/bg-aros.png') center bottom no-repeat;
     background-size: cover;
     position: relative;
 
     .container {
         max-width: none;
-        padding: 0 32px;
-        height: 100vh;
+        padding: 80px 32px;
+        min-height: 100vh;
     }
 
     .sec-index {
@@ -120,7 +120,7 @@ section.hoops {
     } 
 }
 
-section.dest {
+article.dest {
     position: relative;
     //overflow: hidden;
 

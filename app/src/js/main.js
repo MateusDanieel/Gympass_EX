@@ -43,44 +43,69 @@ window.addEventListener('resize', function () {
     });
     */
 })();
- 
-const sections = document.querySelectorAll("section");
-let navLi = '';
 
-if (window.innerWidth <= 640) {
-    navLi = document.querySelectorAll("aside.menu .lst li");
-} else {
-    navLi = document.querySelectorAll(".navbar-menu .navigation li");
-}
-
-
-window.onscroll = () => {
-  var current = "";
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    if (pageYOffset >= sectionTop - 60) {
-      current = section.getAttribute("id"); 
+// GET SECTION AND ACTIVE MENU ITEM
+(() => {
+    let navLi = '';
+    const sections = document.querySelectorAll("section");
+    
+    if (window.innerWidth <= 640) {
+        navLi = document.querySelectorAll("aside.menu .lst li");
+    } else {
+        navLi = document.querySelectorAll(".navbar-menu .navigation li");
     }
-  });
 
-  navLi.forEach((li, i, arr) => {
 
-    li.classList.remove("active");
+    window.onscroll = () => {
+    let current = "";
 
-    if (li.classList.contains(current)) {
-      li.classList.add("active");
-      
-      arr.forEach((el, j) => {
-        if (j > i) {
-            el.classList.remove("active");
-        } else {
-            el.classList.add("active");
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 60) {
+        current = section.getAttribute("id"); 
         }
-      })
-    } 
-  });
-};
+    });
+
+    navLi.forEach((li, i, arr) => {
+
+        li.classList.remove("active");
+
+        if (li.classList.contains(current)) {
+        li.classList.add("active");
+        
+        arr.forEach((el, j) => {
+            if (j > i) {
+                el.classList.remove("active");
+            } else {
+                el.classList.add("active");
+            }
+        })
+        } 
+    });
+    };
+})();
+
+// TOGGLE NAVBAR IN SCROLL
+(() => {
+    var lastScrollTop;
+
+    navbar = document.querySelector('.navbar-menu');
+
+    window.addEventListener('scroll',function(){
+    
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if(scrollTop > lastScrollTop || scrollTop == 0) {
+        navbar.style.marginTop='-80px';
+    } else {
+        navbar.style.marginTop = '0';
+    }
+    
+    lastScrollTop = scrollTop;
+    });
+})();
+ 
+
 
 // FULLPAGE.js INIT
 /*
