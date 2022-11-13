@@ -1,7 +1,7 @@
 window.addEventListener('resize', function () { 
     "use strict";
 
-    if (window.innerWidth <= 640) window.location.reload();
+    if (window.innerWidth <= 992) window.location.reload();
     
 });
 

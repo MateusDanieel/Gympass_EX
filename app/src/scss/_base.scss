@@ -59,7 +59,7 @@ html {
 }
 
 body {
-    background: url('../../img/noise.png') center top repeat;
+    background: #FFF url('../../img/noise.png') center top repeat;
     background-size: contain;
 }
 
@@ -149,7 +149,7 @@ article.dest {
 
     @media (--tabSm) {
         background: url('../../img/bg-section.png') center top no-repeat;
-        background-size: contain;
+        background-size: cover;
     }
 
     > .container {
@@ -230,7 +230,7 @@ article.dest {
             }
 
             p,
-            ul li {
+            ul:not(.lst) li {
                 font-family: 'Sharp Sans';
                 line-height: 1.4;
                 font-size: 16px;
