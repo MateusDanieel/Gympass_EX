@@ -939,36 +939,263 @@ article.sec-employees-importance {
     }
 }
 
-article.sec-employees-last {
-    background: url('../../img/bg-sec-employees-last-mobile.png') center top no-repeat;
+article.sec-body-ant {
+    background: url('../../img/bg-sec-body-mobile.jpg') center top no-repeat;
     background-size: cover;
 
     @media (--tabSm) {
-        background: url('../../img/bg-sec-employees-last.png') center top no-repeat;
+        background: url('../../img/bg-sec-body.jpg') center bottom no-repeat;
         background-size: cover;
     }
 
+    .sec-index {
+        color: #231B22;
+
+        span {
+            border-color: #231B22;
+        }
+    }
+}
+
+article.sec-body {
+    
     .sec-title {
-        display: none;
+        position: relative;
+        padding-left: 53px;
 
         @media (--tabSm) {
-            display: block;
+            padding-left: 87px;
+        }
+
+        &::before {
+            content: '';
+            width: 32px;
+            height: 32px;
+            background: url('../../img/ico-body.svg') center center no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 2px;
+            left: 0;
+
+            @media (--tabSm) {
+                width: 56px;
+                height: 56px;
+                top: 17px;
+            }
         }
     }
 
     h3.intro {
-        font-family: 'Pilat Compressed' !important;
-        font-weight: 600 !important;
-        font-size: 36px !important;
-        text-transform: uppercase;
-        margin: 0 0 34px;
+        margin: 0 0 56px;
 
         @media (--tabSm) {
-            font-family: 'Nys' !important;
-            font-weight: 500 !important;
-            font-size: 56px !important;
-            text-transform: none;
             margin: 0;
-        }   
+        }
     }
+
+    .mobile-wrapper {
+        display: block;
+        margin: 0 0 35px;
+
+        @media (max-width: 640px) {
+            background: #710252 url('../../img/bg-aros-body-mobile.png') center center no-repeat;
+            background-size: cover;
+            border-radius: 32px;
+            padding: 34px 32px 80px;
+            margin: 56px 0 64px;
+        }
+
+        small {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 0 27px;
+            font-family: 'Sharp Sans';
+            font-weight: 700;
+            font-size: 16px;
+            color: #F5F5FA;
+
+            @media (--tabSm) {
+                display: none;
+            }
+        }
+
+        p b {
+
+            @media (max-width: 640px) {
+                color: #F5F5FA;
+                font-family: 'Nys';
+                line-height: 1.2;
+                font-weight: 500 !important;
+                font-size: 28px !important;
+                text-align: center;
+                display: block;
+            }
+
+        }
+    }
+
+    .equip {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 80px;
+
+        img {
+            animation: rotateEquip 10s linear infinite;
+
+            @media (max-width: 640px) {
+                min-width: 553px;
+            }
+        }
+
+        h6 {
+            font-family: 'Nys';
+            line-height: 1.1;
+            font-size: 28px;
+            color: #231B22;
+            text-align: center;
+            font-weight: 500;
+            max-width: 187px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: 70% auto 0;
+
+            @media (--tabSm) {
+                font-size: 24px;
+                max-width: 187px;
+                margin: 40% auto 0;
+            }
+
+            b {
+                display: block;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .lst {
+
+        > li {
+            @media (max-width: 640px) {
+                background: #fff url(../../img/noise.png) center top repeat;
+                background-size: contain;
+                border: 2px solid #231b22;
+                border-radius: 32px;
+                border-right-width: 6px;
+                margin: 0 0 32px;
+                padding: 40px 30px;
+            }
+
+            &:last-child {
+                margin: 0;
+            }
+
+            small {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @media (--tabSm) {
+                    justify-content: flex-start;
+                }
+
+                img {
+                    margin-right: 8px;
+                    max-width: 24px;
+
+                    @media (--tabSm) {
+                        max-width: none;
+                        margin-right: 19px;
+                    }
+                }
+
+                b {
+                    font-family: 'Sharp Sans';
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #231B22;
+                    line-height: 1;
+
+                    @media (--tabSm) {
+                        font-size: 24px;
+                    }
+                }
+            }
+
+            ol {
+                list-style: none;
+
+                &:last-child {
+    
+                    @media (--tabSm) {
+                        margin: 0 0 78px;
+                    }
+                }
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    padding: 16px 0;
+                    border-bottom: 1px solid #D7D7E0;
+
+                    @media (--tabSm) {
+                        padding: 30px 0;
+                    }
+
+                    &:first-child {
+                        margin: 24px 0 0;
+
+                        @media (--tabSm) {
+                            margin: 0;
+                        }
+                    }
+
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+
+                    .nmr {
+                        font-family: 'Sharp Sans';
+                        font-weight: 500;
+                        line-height: 1;
+                        color: #D8385E;
+                        font-size: 16px;
+
+                        @media (--tabSm) {
+                            font-size: 32px;
+                            line-height: 1.2;
+                        }
+                    }
+
+                    img {
+                        max-width: 40px;
+                        margin: 0 17px 0 15px;
+
+                        @media (--tabSm) {
+                            margin: 0 32px 0 18px;
+                            max-width: none;
+                        }
+                    }
+
+                    .title {
+                        font-family: 'Nys';
+                        font-weight: 500;
+                        line-height: 1;
+                        font-size: 24px;
+                        color: #231B22;
+
+                        @media (--tabSm) {
+                            line-height: 1.1;
+                            font-size: 32px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
 }
