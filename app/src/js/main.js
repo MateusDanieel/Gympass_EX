@@ -1,3 +1,4 @@
+/*
 window.addEventListener('resize', function () { 
     "use strict";
 
@@ -14,7 +15,7 @@ window.addEventListener('resize', function () {
         window.alert('Você está abrindo está página em um dispositivo mobile.'); 
     }    
 });
-
+*/
 // NAVBAR MENU
 (() => {
     let bt_open = document.querySelector('nav.navbar .bt-open');
@@ -39,19 +40,7 @@ window.addEventListener('resize', function () {
             
         });
     });
-    /*
-    li.forEach((el, i, arr) => {
-        el.addEventListener('click', () => {
-            arr.forEach((arr_el, arr_i) => {
-                if (arr_i > i) {
-                    arr_el.classList.remove('active');
-                } else {
-                    arr_el.classList.add('active');
-                }
-            })
-        });
-    });
-    */
+
 })();
 
 // GET SECTION AND ACTIVE MENU ITEM
@@ -131,56 +120,6 @@ window.addEventListener('resize', function () {
     });
 })();
 
-// FULLPAGE.js INIT
-/*
-(() => {
-    if (window.innerWidth <= 640) {
-        new fullpage('#fullpage', {
-            licenseKey: '',
-            autoScrolling:true,
-            scrollHorizontally: true,
-            credits: { enabled: false, label: '', position: 'left' },
-            scrollOverflow: true, 
-            scrollBar:false,
-            paddingTop: '72px',
-            paddingBottom: '0'
-        });
-    } else {
-        new fullpage('#fullpage', {
-            licenseKey: '',
-            autoScrolling:true,
-            scrollHorizontally: true,
-            credits: { enabled: false, label: '', position: 'left' },
-            scrollOverflow: true, 
-            scrollBar:false,
-            
-            paddingTop: '0',
-            paddingBottom: '0'
-        });
-    }
-})();
-
-// WATCH CHANGES
-(() => {
-    const body = document.querySelector('body');
-    const navbar = document.querySelector('nav.navbar');
-
-    let observer = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-            if (body.classList.contains('fp-viewing-1')) {
-                navbar.classList.add('disabled');
-            } else {
-                navbar.classList.remove('disabled');
-            }
-        });
-    });
-     
-    observer.observe(body, {
-        attributes: true
-    });
-})();
-*/
-
 // SLICK CAROUSEL
 (() => {
 
@@ -196,6 +135,72 @@ window.addEventListener('resize', function () {
             centerPadding: '32px',
             adaptiveHeight: true
         });
+
+        $('.slider-vert').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: false,
+            dots: true,
+            infinite: false,
+            centerMode: true,
+            centerPadding: '20px',
+            adaptiveHeight: false,
+            vertical: true,
+            verticalSwiping: true,
+        });
     }
 
 })(); 
+
+// SPINNERS ANIMATION
+(() => {
+    const counters = document.querySelectorAll('.value');
+    
+    function counterAnima() {
+        const speed = 200;
+
+        counters.forEach( counter => {
+            const animate = () => {
+            const value = +counter.getAttribute('data-counter');
+            const data = +counter.innerText;
+            const time = value / speed;
+ 
+            if(data < value) {
+                counter.innerText = Math.ceil(data + time);
+
+                setTimeout(animate, 20); 
+            } else {
+                counter.innerText = value;
+            }
+        }
+        
+        animate();
+        });
+    }
+
+    const bar01 = new ProgressBar.Circle('.circle-progress-01', {
+        strokeWidth: 3,
+        easing: 'easeInOut',
+        duration: 3000,
+        color: '#FF874C',
+        trailColor: '#F5F5FA',
+        trailWidth: 1,
+        svgStyle: null
+    });
+
+    const bar02 = new ProgressBar.Circle('.circle-progress-02', {
+        strokeWidth: 3,
+        easing: 'easeInOut',
+        duration: 3000,
+        color: '#FF874C',
+        trailColor: '#F5F5FA',
+        trailWidth: 1,
+        svgStyle: null
+    });
+
+    bar01.animate(0.36);
+    bar02.animate(0.85);
+    counterAnima();
+        
+})();

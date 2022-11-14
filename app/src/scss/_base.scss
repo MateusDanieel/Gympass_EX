@@ -232,7 +232,8 @@ article.dest {
             }
 
             p,
-            ul:not(.lst) li {
+            ul:not(.lst) li,
+            ul:not(.slick-dots) li {
                 font-family: 'Sharp Sans';
                 line-height: 1.4;
                 font-size: 16px;
