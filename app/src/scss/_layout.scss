@@ -706,6 +706,7 @@ article.sec-employees {
         }
         
     }
+
     .dir {
         p {
             &:first-child {
@@ -724,7 +725,7 @@ article.sec-employees {
                 margin-right: 24px;
 
                 &:last-child {
-                    margin-right: 0;
+                    margin-right: 0 !important;
                 }
             }
 
@@ -766,6 +767,10 @@ article.sec-employees {
                     top: 0;
                     left: 0;
                     z-index: -1;
+
+                    @media (--tabSm) {
+                        display: none;
+                    }
                 }
     
                 &:last-child {
@@ -822,4 +827,38 @@ article.sec-employees {
         }
     }
     
+}
+
+article.sec-employees-last {
+    background: url('../../img/bg-sec-employees-last-mobile.png') center top no-repeat;
+    background-size: cover;
+
+    @media (--tabSm) {
+        background: url('../../img/bg-sec-employees-last.png') center top no-repeat;
+        background-size: cover;
+    }
+
+    .sec-title {
+        display: none;
+
+        @media (--tabSm) {
+            display: block;
+        }
+    }
+
+    h3.intro {
+        font-family: 'Pilat Compressed' !important;
+        font-weight: 600 !important;
+        font-size: 36px !important;
+        text-transform: uppercase;
+        margin: 0 0 34px;
+
+        @media (--tabSm) {
+            font-family: 'Nys' !important;
+            font-weight: 500 !important;
+            font-size: 56px !important;
+            text-transform: none;
+            margin: 0;
+        }   
+    }
 }
