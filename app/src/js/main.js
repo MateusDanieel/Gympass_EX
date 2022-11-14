@@ -135,6 +135,20 @@ window.addEventListener('resize', function () {
             centerPadding: '32px',
             adaptiveHeight: true
         });
+
+        $('.slider-vert').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: false,
+            dots: true,
+            infinite: false,
+            centerMode: true,
+            centerPadding: '20px',
+            adaptiveHeight: false,
+            vertical: true,
+            verticalSwiping: true,
+        });
     }
 
 })(); 
