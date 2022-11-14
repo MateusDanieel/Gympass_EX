@@ -147,10 +147,11 @@ article.hoops {
 
 article.dest {
     position: relative;
-
+    overflow-x: hidden;
+    
     @media (--tabSm) {
         background: url('../../img/bg-section.png') center top no-repeat;
-        background-size: cover;
+        background-size: contain;
     }
 
     > .container {
@@ -287,6 +288,40 @@ article.dest {
             }
            
         }
+    }
+}
+
+article.key {
+    background: url('../../img/bg-sec-employees-last-mobile.png') center top no-repeat;
+    background-size: cover;
+
+    @media (--tabSm) {
+        background: url('../../img/bg-sec-employees-last.png') center top no-repeat;
+        background-size: cover;
+    }
+
+    .sec-title {
+        display: none;
+
+        @media (--tabSm) {
+            display: block;
+        }
+    }
+
+    h3.intro {
+        font-family: 'Pilat Compressed' !important;
+        font-weight: 600 !important;
+        font-size: 36px !important;
+        text-transform: uppercase;
+        margin: 0 0 34px;
+
+        @media (--tabSm) {
+            font-family: 'Nys' !important;
+            font-weight: 500 !important;
+            font-size: 56px !important;
+            text-transform: none;
+            margin: 0;
+        }   
     }
 }
 
