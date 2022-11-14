@@ -93,15 +93,15 @@ window.addEventListener('resize', function () {
 
     window.addEventListener('scroll',function(){
     
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if(scrollTop > lastScrollTop || scrollTop == 0) {
-        navbar.style.marginTop='-80px'; 
-    } else {
-        navbar.style.marginTop = '0';
-    }
-    
-    lastScrollTop = scrollTop;
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if(scrollTop > lastScrollTop || scrollTop == 0) {
+            navbar.style.marginTop='-80px'; 
+        } else {
+            navbar.style.marginTop = '0';
+        }
+        
+        lastScrollTop = scrollTop;
     });
 })();
  
@@ -155,6 +155,23 @@ window.addEventListener('resize', function () {
         attributes: true
     });
 })();
-
-
 */
+
+// SLICK CAROUSEL
+(() => {
+
+    if(window.innerWidth <= 640) {
+        $('.slider-for').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: false,
+            dots: false,
+            infinite: false,
+            centerMode: true,
+            centerPadding: '32px',
+            adaptiveHeight: true
+        });
+    }
+
+})(); 

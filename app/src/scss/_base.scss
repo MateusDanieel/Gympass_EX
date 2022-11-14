@@ -1,3 +1,4 @@
+@custom-media --fold (width < 320px);
 @custom-media --ph (width > 400px);
 @custom-media --phWide (width > 480px);
 @custom-media --phTab (width > 560px);
@@ -115,6 +116,7 @@ article.hoops {
         line-height: 1;
         font-weight: 500;
         font-size: 40px;
+        text-transform: uppercase;
 
         @media (--tabSm) {
             font-size: 72px;
