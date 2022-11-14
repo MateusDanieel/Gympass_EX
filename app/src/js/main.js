@@ -10,6 +10,8 @@ window.addEventListener('resize', function () {
     || !navigator.userAgent.match(/Windows Phone/i)
     ){
         if (window.innerWidth <= 1024) window.location.reload();
+    } else {
+        window.alert('Você está abrindo está página em um dispositivo mobile.'); 
     }    
 });
 
