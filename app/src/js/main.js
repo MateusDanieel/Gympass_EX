@@ -1,7 +1,7 @@
 window.addEventListener('resize', function () { 
     "use strict";
 
-    if (window.innerWidth <= 992) window.location.reload();
+    if (window.innerWidth <= 1024) window.location.reload();
     
 });
 
@@ -108,11 +108,16 @@ window.addEventListener('resize', function () {
 // SCROLL ANIMATION ON 'sec-employees-importance'
 (() => {
     const lst = document.querySelector('.sec-employees-importance .lst');
-    const lst_after = getComputedStyle(lst, '::after');
+    const circle = document.querySelector('.sec-employees-importance .circle')
 
     lst.addEventListener('scroll', () => {
-        const current = window.scrollIntoView();
-        console.log(current);
+        const current = lst.scrollTop;
+        if (window.innerWidth <= 1024) {
+            circle.setAttribute('style', `width: calc(100vh - (${current}px / 9)); height: calc(100vh - (${current}px / 9)); border-radius: ${current}px;`);
+        } else {
+            circle.setAttribute('style', `width: calc(250vh - (${current}px / 3.2)); height: calc(250vh - (${current}px / 3.2)); border-radius: ${current}px;`);
+        }
+        
     });
 })();
 
