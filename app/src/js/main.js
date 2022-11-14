@@ -93,19 +93,28 @@ window.addEventListener('resize', function () {
 
     window.addEventListener('scroll',function(){
     
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if(scrollTop > lastScrollTop || scrollTop == 0) {
-        navbar.style.marginTop='-80px'; 
-    } else {
-        navbar.style.marginTop = '0';
-    }
-    
-    lastScrollTop = scrollTop;
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if(scrollTop > lastScrollTop || scrollTop == 0) {
+            navbar.style.marginTop='-80px'; 
+        } else {
+            navbar.style.marginTop = '0';
+        }
+        
+        lastScrollTop = scrollTop;
     });
 })();
  
+// SCROLL ANIMATION ON 'sec-employees-importance'
+(() => {
+    const lst = document.querySelector('.sec-employees-importance .lst');
+    const lst_after = getComputedStyle(lst, '::after');
 
+    lst.addEventListener('scroll', () => {
+        const current = window.scrollIntoView();
+        console.log(current);
+    });
+})();
 
 // FULLPAGE.js INIT
 /*
@@ -155,6 +164,23 @@ window.addEventListener('resize', function () {
         attributes: true
     });
 })();
-
-
 */
+
+// SLICK CAROUSEL
+(() => {
+
+    if(window.innerWidth <= 640) {
+        $('.slider-for').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: false,
+            dots: false,
+            infinite: false,
+            centerMode: true,
+            centerPadding: '32px',
+            adaptiveHeight: true
+        });
+    }
+
+})(); 
