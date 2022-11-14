@@ -105,7 +105,16 @@ window.addEventListener('resize', function () {
     });
 })();
  
+// SCROLL ANIMATION ON 'sec-employees-importance'
+(() => {
+    const lst = document.querySelector('.sec-employees-importance .lst');
+    const lst_after = getComputedStyle(lst, '::after');
 
+    lst.addEventListener('scroll', () => {
+        const current = window.scrollIntoView();
+        console.log(current);
+    });
+})();
 
 // FULLPAGE.js INIT
 /*
