@@ -1199,3 +1199,148 @@ article.sec-body {
 
 
 }
+
+article.sec-mind-ant {
+    background: url('../../img/bg-sec-mind-mobile.jpg') center top no-repeat;
+    background-size: cover;
+
+    @media (--tabSm) {
+        background: url('../../img/bg-sec-mind.jpg') center bottom no-repeat;
+        background-size: cover;
+    }
+
+    .sec-index {
+        color: #231B22;
+
+        span {
+            border-color: #231B22;
+        }
+    }
+}
+
+article.sec-mind {
+    .sec-title {
+        position: relative;
+        padding-left: 53px;
+
+        @media (--tabSm) {
+            padding-left: 87px;
+        }
+
+        &::before {
+            content: '';
+            width: 32px;
+            height: 32px;
+            background: url('../../img/ico-mind.svg') center center no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 2px;
+            left: 0;
+
+            @media (--tabSm) {
+                width: 56px;
+                height: 56px;
+                top: 17px;
+            }
+        }
+    }
+
+    h3.intro {
+        margin: 0 0 56px;
+
+        @media (--tabSm) {
+            margin: 0;
+        }
+    }
+
+    .low-battery-gif {
+        display: block;
+        max-width: 144px;
+        margin: 0 auto;
+
+        @media (--tabSm) {
+            max-width: 200px;
+        }
+    }
+
+    .spinners {
+        padding: 80px 32px;
+        background-color: #710252;
+        margin: 80px 0;
+        border-radius: 32px;
+        
+        .ico {
+            display: block;
+            margin: 0 auto 48px;
+        }
+        
+        h5 {
+            color: #F5F5FA;
+            font-family: 'Nys';
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 1.2;
+            text-align: center;
+
+            @media (--tabSm) {
+                font-size: 32px;
+                line-height: 1;
+            }
+        }
+
+        .spinner {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 56px 0 80px;
+
+            &:last-child {
+                margin: 56px 0 0;
+            }
+
+            @media (--tabSm) {
+                margin: 32px 0 80px;
+
+                &:last-child {
+                    margin: 32px 0 0;
+                }
+            }
+
+            .middle-circle {
+                position: absolute;
+                border-radius: 50%;
+                height: 214px;
+                width: 214px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                .percentage {
+                    font-family: 'Nysé';
+                    font-weight: 800;
+                    font-size: 56px;
+                    text-align: center;
+                    color: #F5F5FA;
+                    line-height: 1;
+
+                    small {
+                        font-size: 24px;
+                    }
+                }
+
+
+            }
+
+            .circle-progress-01, 
+            .circle-progress-02 {
+                height: 214px;
+                width: 214px;
+            }
+
+          
+        }
+    }
+
+    
+}
