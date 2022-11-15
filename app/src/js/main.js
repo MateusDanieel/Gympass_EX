@@ -112,7 +112,7 @@ window.addEventListener('resize', function () {
     lst.addEventListener('scroll', () => {
         const current = lst.scrollTop;
         if (window.innerWidth <= 1024) {
-            circle.setAttribute('style', `width: calc(100vh - (${current}px / 9)); height: calc(100vh - (${current}px / 9)); border-radius: ${current}px;`);
+            circle.setAttribute('style', `width: calc(100vh - (${current}px / 10)); height: calc(100vh - (${current}px / 10)); border-radius: ${current}px;`);
         } else {
             circle.setAttribute('style', `width: calc(250vh - (${current}px / 3.2)); height: calc(250vh - (${current}px / 3.2)); border-radius: ${current}px;`);
         }
