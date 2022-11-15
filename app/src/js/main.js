@@ -122,7 +122,7 @@ window.addEventListener('resize', function () {
 
 // SLICK CAROUSEL
 (() => {
-
+    
     if(window.innerWidth <= 640) {
         $('.slider-for').slick({
             slidesToShow: 1,
@@ -145,6 +145,20 @@ window.addEventListener('resize', function () {
             infinite: false,
             centerMode: true,
             centerPadding: '20px',
+            adaptiveHeight: false,
+            vertical: true,
+            verticalSwiping: true,
+        });
+    } else {
+        $('.slider-vert-full-width').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: false,
+            dots: true,
+            infinite: false,
+            centerMode: false,
+            centerPadding: '0',
             adaptiveHeight: false,
             vertical: true,
             verticalSwiping: true,
