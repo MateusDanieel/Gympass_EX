@@ -570,7 +570,7 @@ article.sec-work-life {
     .dir {
         .lst {
             li {
-                margin: -40px 0 0;
+                margin: -40px 0 0 !important;
                 border: 2px solid #231B22;
                 border-right: 6px solid #231B22;
                 border-radius: 32px;
@@ -582,15 +582,15 @@ article.sec-work-life {
                      border: 0;
                      border-radius: 0;
                      padding: 0;
-                     margin: 0 0 55px;
+                     margin: 0 0 55px !important;
                      background: transparent;
                 }
 
                 &:first-child {
-                    margin: 40px 0 0;
+                    margin: 40px 0 0 !important;
 
                     @media (--tabSm) {
-                        margin: 0 0 55px;
+                        margin: 0 0 55px !important;
                     }
                 }
 
@@ -1346,7 +1346,10 @@ article.sec-mind {
         margin: 0 0 80px;
 
         .slick-dots {
-            top: 40%;
+            //top: 50%;
+            top: 0;
+            bottom: 0;
+            margin: auto;
             right: -40px;
             transform: rotate(90deg);
             display: flex !important;
@@ -1432,6 +1435,47 @@ article.sec-mind {
                         font-size: 40px;
                     }
                 }
+            }
+        }
+    }
+
+    .intro.alt {
+        position: relative;
+        padding: 160px 0 160px;
+
+        @media (--tabSm) {
+            padding: 0;
+        }
+
+        &::before {
+            content: '';
+            width: 327px;
+            height: 352px;
+            background: url('../../img/img-peso-esq.png') center center no-repeat;
+            background-size: cover;
+            position: absolute;
+            left: -160px;
+            top: -30px;
+
+            @media (--tabSm) {
+                left: -300px;
+                top: -80px;
+            }
+        }
+
+        &::after {
+            content: '';
+            width: 303px;
+            height: 303px;
+            background: url('../../img/img-peso-dir.png') center top no-repeat;
+            background-size: cover;
+            position: absolute;
+            right: -100px;
+            top: 290px;
+
+            @media (--tabSm) {
+                top: 80px;
+                right: -180px;
             }
         }
     }
