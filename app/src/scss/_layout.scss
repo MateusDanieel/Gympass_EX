@@ -1480,3 +1480,227 @@ article.sec-mind {
         }
     }
 }
+
+article.sec-life-ant {
+    background: url('../../img/bg-sec-life-mobile.jpg') center top no-repeat;
+    background-size: cover;
+
+    @media (--tabSm) {
+        background: url('../../img/bg-sec-life.jpg') center bottom no-repeat;
+        background-size: cover;
+    }
+
+    .sec-index {
+        color: #231B22;
+
+        span {
+            border-color: #231B22;
+        }
+    }
+}
+
+article.sec-life {
+    .sec-title {
+        position: relative;
+        padding-left: 53px;
+
+        @media (--tabSm) {
+            padding-left: 87px;
+        }
+
+        &::before {
+            content: '';
+            width: 32px;
+            height: 32px;
+            background: url('../../img/ico-life.svg') center center no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 2px;
+            left: 0;
+
+            @media (--tabSm) {
+                width: 56px;
+                height: 56px;
+                top: 17px;
+            }
+        }
+    }
+
+    h3.intro {
+        margin: 0 0 56px;
+    }
+
+    h4.intro {
+        &.alt {
+            @media (max-width: 640px) {
+                strong {
+                    display: block;
+                    font-weight: 800;
+                    font-size: 56px;
+                }
+
+                font-weight: 500;
+                font-size: 24px !important;
+            }
+            
+        }
+        
+    }
+
+    .lst {
+        margin: 0 0 80px;
+
+        .slick-dots {
+            //top: 50%;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: -40px;
+            transform: rotate(90deg);
+            display: flex !important;
+            justify-content: space-between;
+            max-width: 64px;
+            max-height: 8px;
+
+            li {
+                background-color: #D7D7E0;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                padding: 0 !important;
+
+                &.slick-active {
+                    background-color: #231B22;
+                }
+
+                button::before {
+                    content: '' !important;
+                }
+            }
+        }
+        
+        li {
+            padding: 30px 0;
+
+            img, span {
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .flag {
+                margin: 100px auto 20px;
+                max-width: 24px;
+
+                @media (--tabSm) {
+                    max-width: 34px;
+                }
+            }
+
+            .percentage {
+                font-family: 'Nys';
+                font-weight: 800;
+                font-size: 56px;
+                color: #231B22;
+                margin: 0 0 10px;
+
+                small {
+                    font-size: 20px;
+                }
+            }
+
+            .country {
+                font-family: 'Sharp Sans';
+                font-weight: 500;
+                font-size: 18px;
+
+                @media (--tabSm) {
+                    font-size: 20px;
+                }
+            }
+
+
+        }
+    }
+
+    .mobile-wrapper {
+        display: block;
+        margin: 80px 0 56px;
+
+        @media (max-width: 640px) {
+            background: #710252 url('../../img/bg-aros-body-mobile.png') center center no-repeat;
+            background-size: cover;
+            border-radius: 32px;
+            padding: 34px 32px 80px;
+            margin: 56px 0 64px;
+        }
+
+        small {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 0 27px;
+            font-family: 'Sharp Sans';
+            font-weight: 700;
+            font-size: 16px;
+            color: #F5F5FA;
+
+            @media (--tabSm) {
+                display: none;
+            }
+        }
+
+        p b {
+            font-family: 'Nys';
+            color: #F5F5FA;
+            line-height: 1.2;
+            font-weight: 500 !important;
+            font-size: 28px !important;
+            text-align: center;
+            display: block;
+
+            @media (--tabSm) {
+                
+                line-height: 1.1;
+                font-weight: 500 !important;
+                font-size: 48px !important;
+                text-align: left;
+                color: #231B22;
+            }
+
+        }
+    }
+
+    p.alt {
+        position: relative;
+        
+        &::before {
+            
+            
+            @media (--tabSm) {
+                content: '';
+                left: -350px;
+                top: -200px;
+                width: 327px;
+                height: 352px;
+                background: url('../../img/img-peso-esq.png') center center no-repeat;
+                background-size: cover;
+                position: absolute;
+            }
+        }
+
+        &::after {
+            
+            @media (--tabSm) {
+                content: '';
+                width: 303px;
+                height: 303px;
+                background: url('../../img/img-peso-dir.png') center top no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: 80px;
+                right: -250px;
+            }
+        }
+    }
+}
