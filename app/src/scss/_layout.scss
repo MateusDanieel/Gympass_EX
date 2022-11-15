@@ -1704,3 +1704,33 @@ article.sec-life {
         }
     }
 }
+
+footer.sec-footer {
+    background-color: #231B22;
+    padding: 66px 0;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (--tabSm) {
+            flex-direction: row;
+        }
+
+        .copyright {
+            font-family: 'Sharp Sans';
+            font-weight: 500;
+            font-size: 16px;
+            color: #6A6A79;
+            text-align: center;
+            margin: 20px 0 0;
+
+            @media (--tabSm) {
+                text-align: left;
+                margin: 0;
+            }
+        }
+    }
+}
