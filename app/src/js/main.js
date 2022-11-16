@@ -218,3 +218,17 @@ window.addEventListener('resize', function () {
     counterAnima();
         
 })();
+
+// 'MORE' ANIMATE
+(() => {
+    const text = document.querySelectorAll('.sec-articles-more h1');
+
+    window.addEventListener('scroll', () => {
+        const current = window.scrollY;
+/*
+        text.forEach((el) => {
+            el.style.fontSize = `clamp(2rem, ${current}px, 20rem)`;
+        })
+*/
+    })
+})();
