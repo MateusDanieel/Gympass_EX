@@ -1847,7 +1847,7 @@ article.sec-articles-more {
     overflow: hidden;
 
     h1 {
-        font-family: 'Nysé';
+        font-family: 'Nys';
         font-weight: 700;
         font-size: 124px;
         color: #231B22;
@@ -1928,6 +1928,10 @@ article.sec-companies-ant {
 }
 
 article.sec-companies {
+    h3.intro {
+        margin: 0 0 56px;
+    }
+
     h4.intro {
         u {
             color: #710252;
