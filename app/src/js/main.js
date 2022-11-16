@@ -149,7 +149,23 @@ window.addEventListener('resize', function () {
             vertical: true,
             verticalSwiping: true,
         });
+
+        $('.slider-vert-full-width').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: false,
+            dots: true,
+            infinite: false,
+            centerMode: false,
+            centerPadding: '0',
+            adaptiveHeight: false,
+            vertical: true,
+            verticalSwiping: true,
+        });
+
     } else {
+        
         $('.slider-vert-full-width').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
