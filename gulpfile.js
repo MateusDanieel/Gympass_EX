@@ -17,7 +17,7 @@ function browserSync(done) {
   browsersync.init({
     server: {
       baseDir: './app/',
-      index: './index.html'
+      index: './en-us/index.html'
     },
     ghostMode: true,
     port: 3000
@@ -71,7 +71,7 @@ function watchFiles() {
     './app/src/js/*.js',
   ], scripts);
 
-  gulp.watch('./app/*.html', browserSyncReload);
+  gulp.watch('./app/**/*.html', browserSyncReload);
 }
 
 const js = gulp.series(scripts);
