@@ -1761,10 +1761,64 @@ article.sec-articles {
         p.alt {
             color: #000;
             position: relative;
-            padding: 0 0 350px;
 
             @media (--tab) {
                 padding: 0 0 350px;
+            }
+
+            &::after {
+                content: '';
+                width: 100vw;
+                height: 500px;
+                background: url('../../img/mandala.png') center center no-repeat;
+                background-size: cover;
+                position: absolute;
+                left: -32px;
+                top: 0;
+                display: none;
+
+                @media (--tabSm) {
+                    left: 0;
+                    top: 50px;
+                    width: 100%;
+                    display: block;
+                }
+
+                @media (--tab) {
+                    left: 0;
+                    top: 50px;
+                    width: 100%;
+                }
+            }
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            margin: 49px 0 350px;
+            padding: 0 0 35px;
+            border-bottom: 1px solid rgba(106, 106, 121, .5);
+            position: relative;
+
+            @media (--tabSm) {
+                display: none;
+            }
+
+            img {
+                max-width: 56px;
+            }
+
+            span {
+                font-family: 'Sharp Sans';
+                line-height: 1.4;
+                font-size: 14px;
+                color: #000;
+                font-weight: 500;
+                margin: 0 0 0 12px;
+
+                b {
+                    font-weight: 700;
+                }
             }
 
             &::after {
@@ -1781,13 +1835,9 @@ article.sec-articles {
                     left: 0;
                     top: 50px;
                     width: 100%;
+                    display: none;
                 }
 
-                @media (--tab) {
-                    left: 0;
-                    top: 50px;
-                    width: 100%;
-                }
             }
         }
     }
