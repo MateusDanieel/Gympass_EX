@@ -285,46 +285,34 @@ window.addEventListener('resize', function () {
 
     reveal();
     
-
-    /*
-    const debounce = (func, wait, immediate) => {
-        let timeout;
-        return (...args) => {
-            const context = this;
-            const later = () => {
-                timeout = null;
-                if (!immediate) func.apply(context, args);
-            };
-            const callNow = immediate && !timeout;
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-            if (callNow) func.apply(context, args);
-        };
-    };
-
-    const target = document.querySelectorAll('[data-anima]');
-    const animationClass = 'animate';
-
-    function animeScroll() {
-        const windowTop = window.scrollY + (window.innerHeight * 0.75);
-
-        target.forEach((el) => {
-            console.log(el.getBoundingClientRect().top)
-            if((windowTop) > el.offsetTop) {
-                
-                el.classList.add(animationClass);
-            } else {
-                el.classList.remove(animationClass);
-            }
-        });
-    }
-
-    animeScroll();
-
-    if(target.length) {
-        window.addEventListener('scroll', debounce(() => {
-            animeScroll();
-        }, 200));
-    }
-    */
 })();
+
+// 'MORE' ANIMATION
+(() => {
+    let target = document.querySelector('.sec-articles-more');
+    let zoomElement = document.querySelector('.sec-articles-more .container');
+    let zoom = 1;
+    let ZOOM_SPEED = 0.05;
+    
+    document.addEventListener('wheel', (e) => {
+        if(e.deltaY > 0) {
+            zoomElement.style.transform = `scale(${Math.abs(zoom += ZOOM_SPEED)})`;
+        } else {
+            zoomElement.style.transform = `scale(${Math.abs(zoom -= ZOOM_SPEED)})`;
+        }
+    })
+
+    window.addEventListener('scroll', () => {
+        let windowHeight = window.innerHeight;
+        let elementTop = target.getBoundingClientRect().top;
+
+        if (elementTop > windowHeight) { 
+            zoomElement.style.transform = `scale(1)`;
+        }
+    })
+})();
+
+
+
+
+
