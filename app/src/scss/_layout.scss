@@ -398,6 +398,12 @@ header.sec-header {
 
 article.sec-foreword-ant {
 
+    .sec-title {
+        @media (max-width: 640px) {
+            margin: 48px 0 20px;
+        }
+    }
+
     .wrapper {
         display: flex;
         justify-content: center;

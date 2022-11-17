@@ -1,4 +1,4 @@
-/*
+
 window.addEventListener('resize', function () { 
     "use strict";
 
@@ -10,12 +10,10 @@ window.addEventListener('resize', function () {
     || !navigator.userAgent.match(/BlackBerry/i)
     || !navigator.userAgent.match(/Windows Phone/i)
     ){
-        if (window.innerWidth <= 1024) window.location.reload();
-    } else {
-        window.alert('Você está abrindo está página em um dispositivo mobile.'); 
-    }    
+        if (window.innerWidth > 640 && window.innerWidth <= 1024) window.location.reload();
+    }
 });
-*/
+
 // NAVBAR MENU
 (() => {
     let bt_open = document.querySelector('nav.navbar .bt-open');
