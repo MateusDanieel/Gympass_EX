@@ -293,11 +293,11 @@ article.dest {
 }
 
 article.key {
-    background: url('../../img/bg-sec-employees-last-mobile.png') center top no-repeat;
+    background: url('../../img/bg-sec-employees-last-mobile.png') right top no-repeat;
     background-size: cover;
 
     @media (--tabSm) {
-        background: url('../../img/bg-sec-employees-last.png') center top no-repeat;
+        background: url('../../img/bg-sec-employees-last.png') right top no-repeat;
         background-size: cover;
     }
 

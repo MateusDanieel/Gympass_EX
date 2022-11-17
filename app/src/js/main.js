@@ -273,7 +273,7 @@ window.addEventListener('resize', function () {
         target.forEach((el) => {
             var windowHeight = window.innerHeight;
             var elementTop = el.getBoundingClientRect().top;
-            var elementVisible = 100;
+            var elementVisible = 10;
 
             if (elementTop < windowHeight - elementVisible) {
                 el.classList.add(animationClass);
