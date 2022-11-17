@@ -22,6 +22,7 @@
     "jquery": "^2.2.1",
     "jquery-ui-dist": "^1.13.0",
     "jquery-ui-touch-punch": "^0.2.3",
+    "lodash": "^4.17.21",
     "lost": "^8.3.1",
     "normalize.css": "^8.0.1",
     "owl.carousel": "^2.3.4",
@@ -32,7 +33,7 @@
   },
   "devDependencies": {
     "postcss-preset-env": "^7.8.2",
-    "progressbar.js": "^1.1.0"
+    "progressbar.js": "github:kimmobrunfeldt/progressbar.js#master"
   },
   "description": ""
 }
