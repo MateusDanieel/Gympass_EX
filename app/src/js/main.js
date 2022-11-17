@@ -165,7 +165,7 @@ window.addEventListener('resize', function () {
         });
 
     } else {
-        
+
         $('.slider-vert-full-width').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -188,7 +188,7 @@ window.addEventListener('resize', function () {
     const counters = document.querySelectorAll('.value');
     
     function counterAnima() {
-        const speed = 200;
+        const speed = 300;
 
         counters.forEach( counter => {
             const animate = () => {
@@ -199,7 +199,7 @@ window.addEventListener('resize', function () {
             if(data < value) {
                 counter.innerText = Math.ceil(data + time);
 
-                setTimeout(animate, 20); 
+                setTimeout(animate, 100); 
             } else {
                 counter.innerText = value;
             }
@@ -229,8 +229,104 @@ window.addEventListener('resize', function () {
         svgStyle: null
     });
 
-    bar01.animate(0.36);
-    bar02.animate(0.85);
-    counterAnima();
-        
+    function execute() {
+        const target = document.querySelector('.sec-mind .dir .spinners');
+        var windowHeight = window.innerHeight;
+        var elementTop = target.getBoundingClientRect().top;
+        var elementVisible = 750;
+
+        if (elementTop < windowHeight - elementVisible) {
+            bar01.animate(0.36);
+            bar02.animate(0.85);
+            counters.forEach((el, i, arr) => {
+                arr[0].setAttribute('data-counter', '36')
+                arr[1].setAttribute('data-counter', '85')
+            })
+
+            counterAnima()
+        } else {
+            bar01.animate(0);
+            bar02.animate(0);
+
+            counters.forEach((el) => {
+                el.setAttribute('data-counter', '0')
+            })
+
+            counterAnima()
+        }
+
+    }
+
+    window.addEventListener('scroll', execute);
+
+    execute();
+  
+})();
+
+// SCROLL ANIMATION
+(() => {
+
+    function reveal() {
+        const target = document.querySelectorAll('[data-anima]');
+        const animationClass = 'animate';
+
+        target.forEach((el) => {
+            var windowHeight = window.innerHeight;
+            var elementTop = el.getBoundingClientRect().top;
+            var elementVisible = 100;
+
+            if (elementTop < windowHeight - elementVisible) {
+                el.classList.add(animationClass);
+            } else {
+                el.classList.remove(animationClass);
+            }
+        });
+    }
+
+    window.addEventListener('scroll', reveal);
+
+    reveal();
+    
+
+    /*
+    const debounce = (func, wait, immediate) => {
+        let timeout;
+        return (...args) => {
+            const context = this;
+            const later = () => {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            const callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    };
+
+    const target = document.querySelectorAll('[data-anima]');
+    const animationClass = 'animate';
+
+    function animeScroll() {
+        const windowTop = window.scrollY + (window.innerHeight * 0.75);
+
+        target.forEach((el) => {
+            console.log(el.getBoundingClientRect().top)
+            if((windowTop) > el.offsetTop) {
+                
+                el.classList.add(animationClass);
+            } else {
+                el.classList.remove(animationClass);
+            }
+        });
+    }
+
+    animeScroll();
+
+    if(target.length) {
+        window.addEventListener('scroll', debounce(() => {
+            animeScroll();
+        }, 200));
+    }
+    */
 })();
