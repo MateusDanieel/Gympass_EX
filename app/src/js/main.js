@@ -291,14 +291,14 @@ window.addEventListener('resize', function () {
 (() => {
     let target = document.querySelector('.sec-articles-more');
     let zoomElement = document.querySelector('.sec-articles-more .container');
-    let zoom = 1;
+    let zoom = 0;
     let ZOOM_SPEED = 0.05;
-    
+
     document.addEventListener('wheel', (e) => {
         if(e.deltaY > 0) {
-            zoomElement.style.transform = `scale(${Math.abs(zoom += ZOOM_SPEED)})`;
+            zoomElement.style.transform = `scale(${zoom += ZOOM_SPEED})`;
         } else {
-            zoomElement.style.transform = `scale(${Math.abs(zoom -= ZOOM_SPEED)})`;
+            zoomElement.style.transform = `scale(${zoom -= ZOOM_SPEED})`;
         }
     })
 
@@ -307,7 +307,7 @@ window.addEventListener('resize', function () {
         let elementTop = target.getBoundingClientRect().top;
 
         if (elementTop > windowHeight) { 
-            zoomElement.style.transform = `scale(1)`;
+            zoom = 1;
         }
     })
 })();
