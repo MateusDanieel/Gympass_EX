@@ -249,7 +249,7 @@ window.addEventListener('resize', function () {
             counters.forEach((el) => {
                 el.setAttribute('data-counter', '0')
             })
-
+            
             counterAnima()
         }
 
