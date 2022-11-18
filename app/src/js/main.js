@@ -252,7 +252,7 @@ window.addEventListener('resize', function () {
             
             counterAnima()
         }
-
+ 
     }
 
     window.addEventListener('scroll', execute);
