@@ -146,7 +146,6 @@ article.hoops {
 }
 
 article.dest {
-    position: relative;
     overflow-x: hidden;
     
     @media (--tabSm) {
@@ -180,9 +179,10 @@ article.dest {
 
     .wrapper {
         
+
         @media (--tabSm) {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
         }
 
         .esq {
