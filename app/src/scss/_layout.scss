@@ -1864,14 +1864,16 @@ article.sec-articles-more {
         line-height: .9;
         text-align: center;
         position: relative;
-
+        display: flex;
+        
         @media (--tabSm) {
             font-size: 277px;
+            display: block;
         }
 
         img {
             position: absolute;
-            left: 35px;
+            left: 27.5px;
             top: -60px;
             width: 200px;
 
