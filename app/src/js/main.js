@@ -293,21 +293,39 @@ window.addEventListener('resize', function () {
     let zoomElement = document.querySelector('.sec-articles-more .container');
     let zoom = 0;
     let ZOOM_SPEED = 0.05;
+    let lastScrollTop = 0;
 
-    document.addEventListener('wheel', (e) => {
-        if(e.deltaY > 0) {
-            zoomElement.style.transform = `scale(${zoom += ZOOM_SPEED})`;
-        } else {
-            zoomElement.style.transform = `scale(${zoom -= ZOOM_SPEED})`;
-        }
-    })
+    if (window.innerWidth > 992) { 
+        document.addEventListener('wheel', (e) => {
+            if(e.deltaY > 0) {
+                zoomElement.style.transform = `scale(${zoom += ZOOM_SPEED})`;
+            } else {
+                zoomElement.style.transform = `scale(${zoom -= ZOOM_SPEED})`;
+            }
+        })
+    }
 
     window.addEventListener('scroll', () => {
         let windowHeight = window.innerHeight;
         let elementTop = target.getBoundingClientRect().top;
+        let st = window.pageYOffset;
 
         if (elementTop > windowHeight) { 
             zoom = 1;
+        }
+
+        if (window.innerWidth <= 992) {
+
+            if (elementTop < windowHeight && st > lastScrollTop) { 
+                zoomElement.style.transform = `scale(${zoom += 0.01})`;
+            } else if (elementTop < windowHeight && st < lastScrollTop) {
+                zoomElement.style.transform = `scale(${zoom -= 0.01})`;
+            } else {
+                zoom = 1;
+            }
+
+            lastScrollTop = st <= 0 ? 0 : st; 
+            
         }
     })
 })();
