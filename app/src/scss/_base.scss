@@ -153,6 +153,22 @@ article.dest {
         background-size: contain;
     }
 
+    @media (--desk) {
+        overflow-x: inherit;
+    }
+
+    h2.sec-title {
+        font-size: 40px;
+        color: #231B22;
+        font-family: 'Nys';
+        margin: 0 0 16px;
+    
+        @media (--tabSm) {
+            font-size: 88px;
+            margin: 0 0 40px;     
+        }
+    }
+
     > .container {
         padding: 64px 32px;
 
@@ -165,32 +181,24 @@ article.dest {
         }
     }
 
-    h2.sec-title {
-        font-size: 40px;
-        color: #231B22;
-        font-family: 'Nys';
-        margin: 0 0 16px;
-    
-        @media (--tabSm) {
-            font-size: 88px;
-            margin: 0 0 40px;
-        }
-    }
-
     .wrapper {
         
-
         @media (--tabSm) {
             display: flex;
-            justify-content: flex-end;
         }
 
         .esq {
             width: 100%;
+            
 
             @media (--tabSm) {
                 max-width: 552px;
                 margin: 0 90px 0 0;
+
+                .sticky {
+                    position: sticky;
+                    top: 196px;
+                }
             }
 
             h3.intro {
@@ -199,9 +207,10 @@ article.dest {
                 line-height: 1;
                 font-size: 32px;
                 color: #231B22;
-
+                
                 @media (--tabSm) {
                     font-size: 56px;
+                    
                 }
             }
         }
@@ -211,6 +220,7 @@ article.dest {
            
             @media (--tabSm) {
                 max-width: 593px;
+                padding: 141.19px 0 0;
             }
 
             h4.intro {
