@@ -10,7 +10,7 @@ window.addEventListener('resize', function () {
     || !navigator.userAgent.match(/BlackBerry/i)
     || !navigator.userAgent.match(/Windows Phone/i)
     ){
-        if (window.innerWidth > 640 && window.innerWidth <= 1024) window.location.reload();
+        if (window.innerWidth > 768 && window.innerWidth <= 1024) window.location.reload();
     }
 });
 
@@ -249,10 +249,10 @@ window.addEventListener('resize', function () {
             counters.forEach((el) => {
                 el.setAttribute('data-counter', '0')
             })
-
+            
             counterAnima()
         }
-
+ 
     }
 
     window.addEventListener('scroll', execute);
