@@ -453,6 +453,8 @@ article.sec-foreword {
             display: none;
             align-items: center;
             margin: 42px 0 0;
+            position: sticky;
+            top: 71%;
 
             @media (--tabSm) {
                 display: flex;
