@@ -70,7 +70,7 @@ nav.navbar-menu {
     z-index: 110;
     margin: -80px 0 0;
     transition: 1s;
-    transition-delay: 1s;
+    //transition-delay: 1s;
 
     .navigation {
         width: 100%;
@@ -396,12 +396,13 @@ header.sec-header {
     }
 }
 
-article.sec-foreword-ant {
+article.sec-foreword-hoops {
 
     .sec-title {
         @media (max-width: 640px) {
             margin: 48px 0 20px;
         }
+
     }
 
     .wrapper {
@@ -416,6 +417,16 @@ article.sec-foreword-ant {
             flex-direction: row;
             align-items: flex-end;
         }
+
+        .thumb {
+            @media (--deskMini) {
+                max-width: 500px;
+            }
+
+            @media (--deskWide) {
+                max-width: none;
+            }
+        }
     
         .sec-author {
             display: block;
@@ -423,6 +434,12 @@ article.sec-foreword-ant {
 
             @media (--desk) {
                 margin: 0 -270px -50px 11px;
+            }
+
+            img {
+                @media (--deskMini) {
+                    margin: 0 0 0 25px;
+                }
             }
 
             span {
@@ -559,14 +576,19 @@ article.sec-foreword {
     }
 }
 
-article.sec-work-life-ant {
+article.sec-work-life-hoops {
     .sec-title {
         
         @media (--tabSm) {
             font-size: 136px;
-        }   
+        }
+
+        @media (--deskMini) {
+            font-size: 80px;
+        }
         
-        @media (--desk) {
+        @media (--deskWide) {
+            font-size: 136px;
             max-width: 1137px;
             margin: 30px auto 0;
         }
@@ -633,7 +655,7 @@ article.sec-work-life {
     
 }
 
-article.sec-employees-ant {
+article.sec-employees-hoops {
     .sec-title {
         font-size: 56px;
         margin: 48px 0 32px;
@@ -647,7 +669,14 @@ article.sec-employees-ant {
         }
 
         @media (--deskMini) {
+            font-size: 89px;
+            margin: 48px auto 32px;
+
+        }
+
+        @media (--deskWide) {
             font-size: 100px;
+            margin: 48px 0 32px;
         }
 
         &.alt {
@@ -662,9 +691,14 @@ article.sec-employees-ant {
             }
 
             @media (--deskMini) {
-                margin: -88px 0 0 -35px;
-
+                margin: -88px 0 0 35px;
             }
+
+            @media (--deskWide) {
+                margin: -88px 0 0 -35px;
+            }
+
+
         }
         
     }
@@ -948,7 +982,7 @@ article.sec-employees-importance {
     }
 }
 
-article.sec-body-ant {
+article.sec-body-hoops {
     background: url('../../img/bg-sec-body-mobile.jpg') center top no-repeat;
     background-size: cover;
 
@@ -1209,7 +1243,7 @@ article.sec-body {
 
 }
 
-article.sec-mind-ant {
+article.sec-mind-hoops {
     background: url('../../img/bg-sec-mind-mobile.jpg') center top no-repeat;
     background-size: cover;
 
@@ -1490,7 +1524,7 @@ article.sec-mind {
     }
 }
 
-article.sec-life-ant {
+article.sec-life-hoops {
     background: url('../../img/bg-sec-life-mobile.jpg') center top no-repeat;
     background-size: cover;
 
@@ -1930,10 +1964,25 @@ section#Articles {
     }
 }
 
-article.sec-companies-ant {
+article.sec-companies-hoops {
     img {
         display: block;
         margin: 0 auto;
+    }
+
+    .sec-title {
+        font-size: 60px;
+        margin: 0 auto 20px;
+
+        @media (--deskMini) {
+            font-size: 60px;
+            margin: 0 auto 20px;
+        }
+        @media (--deskWide) {
+            font-size: 100px;
+            margin: 0 auto;
+            max-width: 700px;
+        }
     }
 }
 
@@ -2034,5 +2083,45 @@ footer.sec-footer {
                 margin: 0;
             }
         }
+    }
+}
+
+article.sec-employees-key {
+    background: #F5F5FA url('../../img/bg-sec-employees-last-mobile.png') right center no-repeat;
+    background-size: cover;
+
+    @media (--tabSm) {
+        background: #F5F5FA url('../../img/bg-sec-employees-last.png') right center no-repeat;
+        background-size: cover;
+    }
+}
+
+article.sec-body-key {
+    background: #F5F5FA url('../../img/bg-sec-body-key-mobile.png') right bottom no-repeat;
+    background-size: cover;
+
+    @media (--tabSm) {
+        background: #F5F5FA url('../../img/bg-sec-body-key.png') right bottom no-repeat;
+        background-size: cover;
+    }
+}
+
+article.sec-mind-key {
+    background: #F5F5FA url('../../img/bg-sec-mind-key-mobile.png') right bottom no-repeat;
+    background-size: cover;
+
+    @media (--tabSm) {
+        background: #F5F5FA url('../../img/bg-sec-mind-key.png') right top no-repeat;
+        background-size: cover;
+    }
+}
+
+article.sec-life-key {
+    background: #F5F5FA url('../../img/bg-sec-life-key-mobile.png') right bottom no-repeat;
+    background-size: cover;
+
+    @media (--tabSm) {
+        background: #F5F5FA url('../../img/bg-sec-life-key.png') right top no-repeat;
+        background-size: cover;
     }
 }

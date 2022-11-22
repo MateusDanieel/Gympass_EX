@@ -168,15 +168,15 @@ window.addEventListener('resize', function () {
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
-            fade: false,
+            fade: true,
             dots: true,
             infinite: false,
             centerMode: false,
             centerPadding: '0',
             adaptiveHeight: false,
-            vertical: true,
+            vertical: false,
             verticalSwiping: true,
-        });
+        }); 
     }
 
 })(); 
@@ -294,17 +294,18 @@ window.addEventListener('resize', function () {
     let zoom = 0;
     let ZOOM_SPEED = 0.05;
     let lastScrollTop = 0;
-
+/*
     if (window.innerWidth > 992) { 
         document.addEventListener('wheel', (e) => {
+            
             if(e.deltaY > 0) {
-                zoomElement.style.transform = `scale(${zoom += ZOOM_SPEED})`;
+                zoomElement.style.transform = `scale(${Math.abs(zoom += ZOOM_SPEED)})`;
             } else {
-                zoomElement.style.transform = `scale(${zoom -= ZOOM_SPEED})`;
+                zoomElement.style.transform = `scale(${Math.abs(zoom -= ZOOM_SPEED)})`;
             }
         })
     }
-
+*/
     window.addEventListener('scroll', () => {
         let windowHeight = window.innerHeight;
         let elementTop = target.getBoundingClientRect().top;
@@ -314,19 +315,19 @@ window.addEventListener('resize', function () {
             zoom = 1;
         }
 
-        if (window.innerWidth <= 992) {
+        //if (window.innerWidth <= 992) {
 
-            if (elementTop < windowHeight && st > lastScrollTop) { 
-                zoomElement.style.transform = `scale(${zoom += 0.01})`;
-            } else if (elementTop < windowHeight && st < lastScrollTop) {
-                zoomElement.style.transform = `scale(${zoom -= 0.01})`;
-            } else {
-                zoom = 1;
-            }
-
-            lastScrollTop = st <= 0 ? 0 : st; 
-            
+        if (elementTop < windowHeight && st > lastScrollTop) { 
+            zoomElement.style.transform = `scale(${Math.abs(zoom += 0.01)})`;
+        } else if (elementTop < windowHeight && st < lastScrollTop) {
+            zoomElement.style.transform = `scale(${Math.abs(zoom -= 0.01)})`;
+        } else {
+            zoom = 1;
         }
+
+        lastScrollTop = st <= 0 ? 0 : st; 
+            
+        //}
     })
 })();
 
