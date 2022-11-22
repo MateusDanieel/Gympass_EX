@@ -89,8 +89,16 @@ article.hoops {
         max-width: none;
         padding: 72px 32px;
         min-height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        @media (--desk) {
+        @media (--deskMini) {
+            padding: 32px 20px;
+        }
+
+        @media (--deskWide) {
             padding: 80px 32px;
         }
     }
@@ -107,6 +115,17 @@ article.hoops {
             font-size: 126px;
             margin: 30px 0 0;
         }
+
+        @media (--deskMini) {
+            font-size: 80px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (--deskWide) {
+            font-size: 126px;
+            max-width: 1203px;
+        }
     }
 
     .sec-index {
@@ -117,10 +136,23 @@ article.hoops {
         font-weight: 500;
         font-size: 40px;
         text-transform: uppercase;
+        position: absolute;
+        left: 32px;
+        top: 72px;
 
         @media (--tabSm) {
             font-size: 72px;
             margin: 32px 0;
+            top: 80px;
+        }
+
+        @media (--deskMini) {
+            margin: 0;
+            top: 32px;
+        }
+
+        @media (--deskWide) {
+            top: 80px;
         }
  
         span {
@@ -303,14 +335,7 @@ article.dest {
 }
 
 article.key {
-    background: url('../../img/bg-sec-employees-last-mobile.png') right top no-repeat;
-    background-size: cover;
-
-    @media (--tabSm) {
-        background: url('../../img/bg-sec-employees-last.png') right top no-repeat;
-        background-size: cover;
-    }
-
+    
     .sec-title {
         display: none;
 
@@ -336,12 +361,18 @@ article.key {
     }
 }
 
-/* FULLPAGE ALT 
-.fp-warning, .fp-watermark {
+.only-desktop {
     display: none;
+
+    @media (--deskMini) {
+        display: block;
+    }
 }
 
-.fp-is-overflow .fp-overflow.fp-auto-height, .fp-is-overflow .fp-overflow.fp-auto-height-responsive, .fp-is-overflow>.fp-overflow {
-    overflow-x: hidden;
+.only-mobile {
+    display: block;
+    
+    @media (--deskMini) {
+        display: none;
+    }
 }
-*/
