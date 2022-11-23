@@ -190,8 +190,12 @@ article.dest {
         margin: 0 0 16px;
     
         @media (--tabSm) {
-            font-size: 88px;
+            font-size: 80px;
             margin: 0 0 40px;     
+        }
+
+        @media (--deskWide) {
+            font-size: 88px;
         }
     }
 
@@ -235,8 +239,11 @@ article.dest {
                 color: #231B22;
                 
                 @media (--tabSm) {
+                    font-size: 50px;
+                }
+
+                @media (--deskWide) {
                     font-size: 56px;
-                    
                 }
             }
         }

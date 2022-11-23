@@ -152,13 +152,13 @@ window.addEventListener('resize', function () {
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
-            fade: false,
+            fade: true,
             dots: true,
             infinite: false,
             centerMode: false,
             centerPadding: '0',
             adaptiveHeight: false,
-            vertical: true,
+            vertical: false,
             verticalSwiping: true,
         });
 
@@ -292,7 +292,7 @@ window.addEventListener('resize', function () {
     let target = document.querySelector('.sec-articles-more');
     let zoomElement = document.querySelector('.sec-articles-more .container');
     let zoom = 0;
-    let ZOOM_SPEED = 0.05;
+    let ZOOM_SPEED = 0.005;
     let lastScrollTop = 0;
 /*
     if (window.innerWidth > 992) { 
@@ -318,9 +318,9 @@ window.addEventListener('resize', function () {
         //if (window.innerWidth <= 992) {
 
         if (elementTop < windowHeight && st > lastScrollTop) { 
-            zoomElement.style.transform = `scale(${Math.abs(zoom += 0.01)})`;
+            zoomElement.style.transform = `scale(${Math.abs(zoom += ZOOM_SPEED)})`;
         } else if (elementTop < windowHeight && st < lastScrollTop) {
-            zoomElement.style.transform = `scale(${Math.abs(zoom -= 0.01)})`;
+            zoomElement.style.transform = `scale(${Math.abs(zoom -= ZOOM_SPEED)})`;
         } else {
             zoom = 1;
         }
