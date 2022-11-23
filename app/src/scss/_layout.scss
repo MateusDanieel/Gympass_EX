@@ -1518,7 +1518,13 @@ article.sec-mind {
 
             @media (--tabSm) {
                 top: 80px;
+                right: -50px;
+                display: none;
+            }
+
+            @media (min-width: 1360px) {
                 right: -180px;
+                display: block;
             }
         }
     }
@@ -1743,6 +1749,14 @@ article.sec-life {
                 position: absolute;
                 top: 80px;
                 right: -250px;
+
+                @media (--tabSm) {
+                    display: none;
+                }
+
+                @media (min-width: 1360px) {
+                    display: block;
+                }
             }
         }
     }

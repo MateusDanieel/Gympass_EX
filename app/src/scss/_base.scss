@@ -29,8 +29,6 @@
     }
 }
 
-
-
 * {
     margin: 0;
     padding: 0;
@@ -51,17 +49,13 @@ ul {
 }
 
 html {
-/*
-    @media (--tabSm) {
-        background: url('../../img/bg-section.png') center top no-repeat;
-        background-size: contain;
-    }
-*/
+
 }
 
 body {
     background: #FFF url('../../img/noise.png') center top repeat;
     background-size: contain;
+    overflow-x: hidden;
 }
 
 .container {
@@ -185,7 +179,7 @@ article.dest {
         background-size: contain;
     }
 
-    @media (--desk) {
+    @media (--deskMini) {
         overflow-x: inherit;
     }
 
@@ -253,6 +247,14 @@ article.dest {
             @media (--tabSm) {
                 max-width: 593px;
                 padding: 141.19px 0 0;
+            }
+
+            @media (--deskMini) {
+                overflow: hidden;
+            }
+
+            @media (min-width: 1360px) {
+                overflow: inherit;
             }
 
             h4.intro {
