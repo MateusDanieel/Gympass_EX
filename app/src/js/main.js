@@ -210,7 +210,7 @@ window.addEventListener('resize', function () {
     const bar01 = new ProgressBar.Circle('.circle-progress-01', {
         strokeWidth: 3,
         easing: 'easeInOut',
-        duration: 3000,
+        duration: 1000,
         color: '#FF874C',
         trailColor: '#F5F5FA',
         trailWidth: 1,
@@ -220,7 +220,7 @@ window.addEventListener('resize', function () {
     const bar02 = new ProgressBar.Circle('.circle-progress-02', {
         strokeWidth: 3,
         easing: 'easeInOut',
-        duration: 3000,
+        duration: 1000,
         color: '#FF874C',
         trailColor: '#F5F5FA',
         trailWidth: 1,
