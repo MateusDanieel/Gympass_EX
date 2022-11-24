@@ -37,7 +37,6 @@ function css() {
       './node_modules/normalize.css/normalize.css',
       './node_modules/slick-carousel/slick/slick.css',
       './node_modules/slick-carousel/slick/slick-theme.css',
-      //'./node_modules/fullpage.js/dist/fullpage.css',
       './app/src/scss/*.scss'
     ])
     .pipe(concat('style.min.css'))
@@ -52,8 +51,6 @@ function scripts() {
     gulp.src([
       './node_modules/jquery/dist/jquery.js',
       './node_modules/slick-carousel/slick/slick.js',
-      //'./node_modules/fullpage.js/dist/fullpage.js',
-      //'./node_modules/fullpage.js/dist/fullpage.extensions.js',
       './node_modules/progressbar.js/dist/progressbar.js',
       './app/src/js/modernizr-3.11.2.js',
       './app/src/js/main.js'
