@@ -52,7 +52,6 @@ window.addEventListener('resize', function () {
         navLi = document.querySelectorAll(".navbar-menu .navigation li");
     }
 
-
     window.onscroll = () => {
     let current = "";
 
@@ -68,15 +67,15 @@ window.addEventListener('resize', function () {
         li.classList.remove("active");
 
         if (li.classList.contains(current)) {
-        li.classList.add("active");
-        
-        arr.forEach((el, j) => {
-            if (j > i) {
-                el.classList.remove("active");
-            } else {
-                el.classList.add("active");
-            }
-        })
+            li.classList.add("active");
+            
+            arr.forEach((el, j) => {
+                if (j > i) {
+                    el.classList.remove("active");
+                } else {
+                    el.classList.add("active");
+                }
+            })
         } 
     });
     };
@@ -122,6 +121,7 @@ window.addEventListener('resize', function () {
 (() => {
     
     if(window.innerWidth <= 640) {
+        
         $('.slider-for').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -177,6 +177,7 @@ window.addEventListener('resize', function () {
             vertical: false,
             verticalSwiping: true,
         }); 
+        
     }
 
 })(); 
