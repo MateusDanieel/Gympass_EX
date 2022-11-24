@@ -1918,7 +1918,32 @@ article.sec-articles-more {
             font-size: 277px;
             display: block;
         }
+        
+        span.alt {
+            position: relative;
+            color: transparent;
 
+            &::after {
+                content: '';
+                background: url('../../img/gif_more_v2.gif') center center no-repeat;
+                background-size: cover;
+                width: 200px;
+                height: 200px;
+                background-color: transparent;
+                position: absolute;
+                left: -63px;
+                top: -55px;
+
+                @media (--tabSm) {
+                    width: 450px;
+                    height: 350px;
+                    left: -142px;
+                    top: -65px;
+                }
+            }
+            
+        }
+/*
         img {
             position: absolute;
             left: 27.5px;
@@ -1926,25 +1951,28 @@ article.sec-articles-more {
             width: 200px;
 
             @media (--tabSm) {
-                top: -140px;
-                left: 74px;
                 width: 460px;
-            }
-
-            @media (--tabSm) {
-                left: 202px;
-            }
-
-            @media (--tabSm) {
                 left: 317px;
                 top: -140px;
+            }
+
+            @media (--deskMini) {
+                
+            }
+
+            @media (--desk) {
+                left: 284px;
+            }
+
+            @media (--deskWide) {
+                left: 317px;
             }
         }
 
         img + span {
             visibility: hidden;
         }
-
+*/
     }
 }
 
