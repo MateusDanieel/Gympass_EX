@@ -117,7 +117,7 @@ article.hoops {
         }
 
         @media (--deskWide) {
-            font-size: 126px;
+            font-size: 85px;
             max-width: 1203px;
         }
     }
@@ -132,7 +132,7 @@ article.hoops {
         text-transform: uppercase;
         position: absolute;
         left: 32px;
-        top: 72px;
+        top: 82px;
 
         @media (--tabSm) {
             font-size: 72px;
@@ -142,7 +142,7 @@ article.hoops {
 
         @media (--deskMini) {
             margin: 0;
-            top: 32px;
+            top: 90px;
         }
 
         @media (--deskWide) {
@@ -195,7 +195,7 @@ article.dest {
         }
 
         @media (--deskWide) {
-            font-size: 88px;
+            font-size: 76px;
         }
     }
 
@@ -274,7 +274,7 @@ article.dest {
                 margin: 56px 0;
 
                 @media (--tabSm) {
-                    font-size: 48px;
+                    font-size: 38px;
                     line-height: 1.1;
                     font-weight: 500;
                     text-align: left;

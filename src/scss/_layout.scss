@@ -412,6 +412,7 @@ article.sec-foreword-hoops {
         align-items: center;
         position: relative;
         margin: 0 auto;
+        width: 90%;
 
         @media (--desk) {
             flex-direction: row;
@@ -420,11 +421,12 @@ article.sec-foreword-hoops {
 
         .thumb {
             @media (--deskMini) {
-                max-width: 500px;
+                max-width: 800px;
+                /*width: 100%;*/
             }
 
             @media (--deskWide) {
-                max-width: none;
+                max-width: 1100px;
             }
         }
     
@@ -433,7 +435,7 @@ article.sec-foreword-hoops {
             margin: 10px auto 0 0;
 
             @media (--desk) {
-                margin: 0 -270px -50px 11px;
+                margin: 0 -270px -10px 11px;
             }
 
             img {
@@ -545,7 +547,7 @@ article.sec-foreword {
                 content: '';
                 width: 100vw;
                 height: 500px;
-                background: url('../img/mandala.png') center center no-repeat;
+                background: url('../img/mandala_cesar.png') center center no-repeat;
                 background-size: cover;
                 position: absolute;
                 left: -32px;
@@ -559,7 +561,7 @@ article.sec-foreword {
 
                 @media (--tab) {
                     left: 0;
-                    top: 50px;
+                    top: 0;
                     width: 100%;
                 }
             }
@@ -584,11 +586,10 @@ article.sec-work-life-hoops {
         }
 
         @media (--deskMini) {
-            font-size: 80px;
+            font-size: 85px;
         }
         
         @media (--deskWide) {
-            font-size: 136px;
             max-width: 1137px;
             margin: 30px auto 0;
         }
@@ -711,6 +712,7 @@ article.sec-employees-hoops {
 
             @media (--tabSm) {
                 display: block;
+                width: 90%;
             }
         }
 
@@ -1826,8 +1828,6 @@ article.sec-articles {
                 content: '';
                 width: 100vw;
                 height: 500px;
-                background: url('../img/mandala.png') center center no-repeat;
-                background-size: cover;
                 position: absolute;
                 left: -32px;
                 top: 0;
@@ -1844,6 +1844,13 @@ article.sec-articles {
                     left: 0;
                     top: 50px;
                     width: 100%;
+                }
+            }
+
+            &.josh {
+                &::after {
+                    background: url('../img/mandala_josh_en.png') center center no-repeat;
+                    background-size: cover;
                 }
             }
         }
@@ -1881,8 +1888,6 @@ article.sec-articles {
                 content: '';
                 width: 100vw;
                 height: 500px;
-                background: url('../img/mandala.png') center center no-repeat;
-                background-size: cover;
                 position: absolute;
                 left: -32px;
                 top: 0;
@@ -1895,12 +1900,32 @@ article.sec-articles {
                 }
 
             }
+
+            &.josh {
+                &::after {
+                    background: url('../img/mandala_josh_br.png') center center no-repeat;
+                    background-size: cover;
+                }
+            }
+
+            &.camilla {
+                &::after {
+                    background: url('../img/mandala_camila_br.png') center center no-repeat;
+                    background-size: cover;
+                }
+            }
         }
     }
 }
 
 article.sec-articles-more {
     overflow: hidden;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     h1 {
         font-family: 'Nys';
@@ -2017,7 +2042,7 @@ article.sec-companies-hoops {
         margin: 0 auto 20px;
 
         @media (--deskMini) {
-            font-size: 60px;
+            font-size: 54px;
             margin: 0 auto 20px;
         }
         @media (--deskWide) {
