@@ -17,7 +17,8 @@ function browserSync(done) {
   browsersync.init({
     server: {
       baseDir: './app/',
-      index: './en-us/index.html'
+      //index: './en-us/resources/full-report/index.html'
+      index: './pt-br/resources/full-report/index.html'
     },
     ghostMode: true,
     port: 3000
@@ -37,11 +38,12 @@ function css() {
       './node_modules/normalize.css/normalize.css',
       './node_modules/slick-carousel/slick/slick.css',
       './node_modules/slick-carousel/slick/slick-theme.css',
-      './app/src/scss/*.scss'
+      './src/scss/*.scss'
     ])
     .pipe(concat('style.min.css'))
     .pipe(postcss([atImport(), autoprefixer(), precss(), cssnano(), lost()]))
-    .pipe(gulp.dest('./app/dist/css'))
+    .pipe(gulp.dest('./app/en-us/resources/full-report/assets/css'))
+    .pipe(gulp.dest('./app/pt-br/resources/full-report/assets/css'))
     .pipe(browsersync.stream());
 }
 
@@ -52,20 +54,21 @@ function scripts() {
       './node_modules/jquery/dist/jquery.js',
       './node_modules/slick-carousel/slick/slick.js',
       './node_modules/progressbar.js/dist/progressbar.js',
-      './app/src/js/modernizr-3.11.2.js',
-      './app/src/js/main.js'
+      './src/js/modernizr-3.11.2.js',
+      './src/js/main.js'
     ])
       .pipe(concat('script.min.js'))
       .pipe(uglify())
-      .pipe(gulp.dest('app/dist/js'))
+      .pipe(gulp.dest('app/en-us/resources/full-report/assets/js'))
+      .pipe(gulp.dest('app/pt-br/resources/full-report/assets/js'))
       .pipe(browsersync.stream()));
 }
 
 function watchFiles() {
-  gulp.watch('./app/src/scss/*.scss', css);
+  gulp.watch('./src/scss/*.scss', css);
 
   gulp.watch([
-    './app/src/js/*.js',
+    './src/js/*.js',
   ], scripts);
 
   gulp.watch('./app/**/*.html', browserSyncReload);
