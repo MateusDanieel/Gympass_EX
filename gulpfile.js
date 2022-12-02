@@ -17,7 +17,8 @@ function browserSync(done) {
   browsersync.init({
     server: {
       baseDir: './app/',
-      index: './en-us/resources/full-report/index.html'
+      //index: './en-us/resources/full-report/index.html'
+      index: './pt-br/resources/full-report/index.html'
     },
     ghostMode: true,
     port: 3000
