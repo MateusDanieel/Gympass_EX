@@ -1,0 +1,387 @@
+@custom-media --fold (width < 320px);
+@custom-media --ph (width > 400px);
+@custom-media --phWide (width > 480px);
+@custom-media --phTab (width > 560px);
+@custom-media --tabSm (width > 640px);
+@custom-media --tab (width > 768px);
+@custom-media --tabWide (width > 1024px);
+@custom-media --deskMini (width > 992px);
+@custom-media --desk (width > 1248px);
+@custom-media --deskWide (width > 1440px);
+ 
+@media (--tabSm) {
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        //background: url('../img/noise.png') center top repeat;
+        //background-size: cover;
+        background: transparent;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, .3);
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, .5);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+ 
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+html {
+
+}
+
+body {
+    background: #FFF url('../img/noise.png') center top repeat;
+    background-size: contain;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1190px;
+    margin: 0 auto;
+    padding: 0 32px;
+
+    @media (--deskWide) {
+        padding: 0;
+    }
+}
+
+article.hoops {
+    background: #710252 url('../img/bg-aros-mobile.png') center top no-repeat;
+    background-size: cover;
+    position: relative;
+
+    @media (--tabSm) {
+        background: #710252 url('../img/bg-aros.png') center bottom no-repeat;
+        background-size: cover;
+    }
+
+    .container {
+        max-width: none;
+        padding: 72px 32px;
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (--deskMini) {
+            padding: 32px 20px;
+        }
+
+        @media (--deskWide) {
+            padding: 80px 32px;
+        }
+    }
+
+    .sec-title {
+        font-size: 56px;
+        font-weight: 400;
+        font-family: 'Nys';
+        color: #F5F5FA;
+        text-align: center;
+        margin: 48px 0 56px;
+
+        @media (--tabSm) {
+            font-size: 126px;
+            margin: 30px 0 0;
+        }
+
+        @media (--deskMini) {
+            font-size: 80px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (--deskWide) {
+            font-size: 126px;
+            max-width: 1203px;
+        }
+    }
+
+    .sec-index {
+        display: flex;
+        color: #F5F5FA;
+        font-family: 'Pilat Compressed';
+        line-height: 1;
+        font-weight: 500;
+        font-size: 40px;
+        text-transform: uppercase;
+        position: absolute;
+        left: 32px;
+        top: 72px;
+
+        @media (--tabSm) {
+            font-size: 72px;
+            margin: 32px 0;
+            top: 80px;
+        }
+
+        @media (--deskMini) {
+            margin: 0;
+            top: 32px;
+        }
+
+        @media (--deskWide) {
+            top: 80px;
+        }
+ 
+        span {
+            font-family: 'Nys';
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            border: 2px solid #F5F5FA;
+            max-height: 40px;
+            padding: 5px 15px 0;
+            border-radius: 64px;
+            margin: 0 0 0 16px;
+
+            @media (--tabSm) {
+                margin: 8px 0 0 30px;
+                font-size: 32px;
+                max-height: 56px;
+                padding: 5px 30px 0;
+            }
+        }
+    } 
+}
+
+article.dest {
+    overflow-x: hidden;
+    
+    @media (--tabSm) {
+        background: url('../img/bg-section.png') right top no-repeat; 
+        background-size: contain;
+    }
+
+    @media (--deskMini) {
+        overflow-x: inherit;
+    }
+
+    h2.sec-title {
+        font-size: 40px;
+        color: #231B22;
+        font-family: 'Nys';
+        margin: 0 0 16px;
+    
+        @media (--tabSm) {
+            font-size: 80px;
+            margin: 0 0 40px;     
+        }
+
+        @media (--deskWide) {
+            font-size: 88px;
+        }
+    }
+
+    > .container {
+        padding: 64px 32px;
+
+        @media (--tabSm) {
+            padding: 152px 32px 196px;
+        }
+
+        @media (--desk) {
+            padding: 152px 0 196px;
+        }
+    }
+
+    .wrapper {
+        
+        @media (--tabSm) {
+            display: flex;
+        }
+
+        .esq {
+            width: 100%;
+            
+
+            @media (--tabSm) {
+                max-width: 552px;
+                margin: 0 90px 0 0;
+
+                .sticky {
+                    position: sticky;
+                    top: 196px;
+                }
+            }
+
+            h3.intro {
+                font-family: 'Nys';
+                font-weight: 500;
+                line-height: 1;
+                font-size: 32px;
+                color: #231B22;
+                
+                @media (--tabSm) {
+                    font-size: 50px;
+                }
+
+                @media (--deskWide) {
+                    font-size: 56px;
+                }
+            }
+        }
+
+        .dir {
+            width: 100%;
+           
+            @media (--tabSm) {
+                max-width: 593px;
+                padding: 141.19px 0 0;
+            }
+
+            @media (--deskMini) {
+                overflow: hidden;
+            }
+
+            @media (min-width: 1360px) {
+                overflow: inherit;
+            }
+
+            h4.intro {
+                color: #231B22;
+                font-family: 'Nys';
+                font-weight: 600;
+                line-height: 1.2;
+                font-size: 28px;
+                text-align: center;
+                margin: 56px 0;
+
+                @media (--tabSm) {
+                    font-size: 48px;
+                    line-height: 1.1;
+                    font-weight: 500;
+                    text-align: left;
+                }
+
+            }
+
+            p,
+            ul:not(.lst) > li,
+            ul:not(.slick-dots) > li {
+                font-family: 'Sharp Sans';
+                line-height: 1.4;
+                font-size: 16px;
+                font-weight: 500;
+                color: #231B22;
+                margin: 0 0 35px;
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                b {
+                    font-weight: 700;
+                    font-size: 18px;
+                }
+
+                @media (--tabSm) {
+                    font-size: 20px;
+
+                    b {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            
+        }
+    }
+
+    .next {
+        display: block;
+        font-family: 'Sharp Sans';
+        font-weight: 500;
+        font-size: 24px;
+        color: #F5F5FA;
+        background-color: #710252;
+        padding: 45px 0;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @media (--tabSm) {
+                justify-content: flex-start;
+            }
+        }
+
+        img {
+
+            @media (--tabSm) {
+                margin: 0 0 0 16px; 
+            }
+           
+        }
+    }
+}
+
+article.key {
+    
+    .sec-title {
+        display: none;
+
+        @media (--tabSm) {
+            display: block;
+        }
+    }
+
+    h3.intro {
+        font-family: 'Pilat Compressed' !important;
+        font-weight: 600 !important;
+        font-size: 36px !important;
+        text-transform: uppercase;
+        margin: 0 0 34px;
+
+        @media (--tabSm) {
+            font-family: 'Nys' !important;
+            font-weight: 500 !important;
+            font-size: 56px !important;
+            text-transform: none;
+            margin: 0;
+        }   
+    }
+}
+
+.only-desktop {
+    display: none;
+
+    @media (--deskMini) {
+        display: block;
+    }
+}
+
+.only-mobile {
+    display: block;
+    
+    @media (--deskMini) {
+        display: none;
+    }
+}
