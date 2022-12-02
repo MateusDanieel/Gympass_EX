@@ -40,8 +40,8 @@ html[lang='pt-BR'] {
                 }
     
                 @media (--deskWide) {
-                    margin: 240px 0 0;
-                    font-size: 246px;
+                    margin: 170px 0 0;
+                    font-size: 180px;
                 }
             }
            
@@ -57,7 +57,7 @@ html[lang='pt-BR'] {
                 }
     
                 @media (--desk) {
-                    margin: 0;
+                    margin: 5% 0 0;
                 }
     
                 @media (--deskWide) {
@@ -89,8 +89,8 @@ html[lang='pt-BR'] {
                     }
         
                     @media (--deskWide) {
-                        height: 533.5px;
-                        top: -100px;
+                        height: 370px;
+                        top: -50px;
                     }
                 }
             }
@@ -114,11 +114,11 @@ html[lang='pt-BR'] {
             }
     
             @media (--desk) {
-                margin: -130px 0 -151px 65%;
+                margin:-130px 0 -151px 64.5%;
             }
     
             @media (--deskWide) {
-                margin: -110px 0 -151px 66%;
+                margin:-110px 0 -151px 70%;
             }
         }
     
@@ -191,7 +191,7 @@ html[lang='pt-BR'] {
                 }
     
                 @media (--deskWide) {
-                    margin: 60px auto 0;
+                    margin: 25px auto 0;
                 }
             }
         }
@@ -229,6 +229,7 @@ html[lang='pt-BR'] {
     article.sec-employees-hoops {
         .sec-dest {
             display: block;
+            width: 80%;
         }
     }
 
