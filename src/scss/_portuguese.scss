@@ -219,7 +219,7 @@ html[lang='pt-BR'] {
         .dir {
             .intro.alt {
                 &::after {
-                    background: url('../img/mandala_pt-br.png') center center no-repeat;
+                    background: url('../img/mandala_cesar_pt-br.png') center center no-repeat;
                     background-size: cover;
                 }
             }
@@ -265,9 +265,19 @@ html[lang='pt-BR'] {
     article.sec-articles {
         .dir {
             p.alt {
-                &::after {
-                    background: url('../img/mandala_pt-br.png') center center no-repeat;
-                    background-size: cover;
+
+                &.josh {
+                    &::after {
+                        background: url('../img/mandala_josh_br.png') center center no-repeat;
+                        background-size: cover;
+                    }
+                }
+
+                &.camilla {
+                    &::after {
+                        background: url('../img/mandala_camila_br.png') center center no-repeat;
+                        background-size: cover;
+                    }
                 }
             }
         }

@@ -547,7 +547,7 @@ article.sec-foreword {
                 content: '';
                 width: 100vw;
                 height: 500px;
-                background: url('../img/mandala.png') center center no-repeat;
+                background: url('../img/mandala_cesar.png') center center no-repeat;
                 background-size: cover;
                 position: absolute;
                 left: -32px;
@@ -561,7 +561,7 @@ article.sec-foreword {
 
                 @media (--tab) {
                     left: 0;
-                    top: 50px;
+                    top: 0;
                     width: 100%;
                 }
             }
@@ -1828,8 +1828,6 @@ article.sec-articles {
                 content: '';
                 width: 100vw;
                 height: 500px;
-                background: url('../img/mandala.png') center center no-repeat;
-                background-size: cover;
                 position: absolute;
                 left: -32px;
                 top: 0;
@@ -1846,6 +1844,13 @@ article.sec-articles {
                     left: 0;
                     top: 50px;
                     width: 100%;
+                }
+            }
+
+            &.josh {
+                &::after {
+                    background: url('../img/mandala_josh_en.png') center center no-repeat;
+                    background-size: cover;
                 }
             }
         }
