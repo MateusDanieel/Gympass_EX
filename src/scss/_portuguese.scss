@@ -263,6 +263,13 @@ html[lang='pt-BR'] {
     }
 
     article.sec-articles {
+        &.josh {
+            background: transparent;
+
+            .container {
+                padding-top: 0;
+            }
+        }
         .dir {
             p.alt {
 
@@ -270,6 +277,10 @@ html[lang='pt-BR'] {
                     &::after {
                         background: url('../img/mandala_josh_br.png') center center no-repeat;
                         background-size: cover;
+                        
+                        @media (--tab) {
+                            top: 90px;
+                        }
                     }
                 }
 
@@ -277,7 +288,103 @@ html[lang='pt-BR'] {
                     &::after {
                         background: url('../img/mandala_camila_br.png') center center no-repeat;
                         background-size: cover;
+                        
+                        @media (--tab) {
+                            top: 100px;
+                        }
+                    } 
+                }
+            }
+        }
+
+        /* collapse articles */
+
+        .author {
+            display: block;
+
+            @media (--tabSm) {
+                display: none;
+            }
+
+            > div {
+                display: flex;
+                align-items: flex-start;
+                margin: 0 0 32px;
+            }
+
+            &.active {
+                > div {
+                    margin: 0;
+                }
+            }
+        }
+
+        .bt-hidden,
+        .bt-show {
+            display: none;
+        }
+
+        @media (max-width: 640px) {
+            [data-hidden-xs] {
+                &:not(.author) {
+                    display: none;
+                    visibility: hidden;
+                    opacity: 0;
+                }
+                
+                &.author {
+                    margin-bottom: 0;
+
+                    &::after {
+                        display: none;
+                        visibility: hidden;
+                        opacity: 0;
                     }
+                }
+
+                &.active {
+                    display: block;
+
+                    &.author {
+    
+                        &::after {
+                            display: block;
+                        }
+                    }
+
+                    &.show {
+                        visibility: visible;
+                        opacity: 1;
+                        transition: .3s;
+
+                        &.author {
+                            margin-bottom: 350px;
+        
+                            &::after {
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .bt-hidden,
+            .bt-show {
+                font-family: 'Sharp Sans';
+                font-weight: 700;
+                font-size: 16px;
+                color: #000;
+                border: 2px solid #000;
+                text-transform: uppercase;
+                background-color: transparent;
+                outline: none;
+                width: 100%;
+                border-radius: 93px;
+                line-height: 3;
+
+                &.active {
+                    display: block;
                 }
             }
         }

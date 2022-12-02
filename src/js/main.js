@@ -1,4 +1,4 @@
-window.addEventListener('resize', function () { 
+window.addEventListener('resize', function () {  
     "use strict";
 
     if(!navigator.userAgent.match(/Android/i)
@@ -331,7 +331,71 @@ window.addEventListener('resize', function () {
     })
 })();
 
+// PT-BR COLLAPSES
 
+(() => {
+    const btShow = document.querySelectorAll('.sec-articles .bt-show');
+    const btHidden = document.querySelectorAll('.sec-articles .bt-hidden');
+    const dataCamilla = document.querySelectorAll('[data-hidden-xs="camilla"]');
+    const dataJosh = document.querySelectorAll('[data-hidden-xs="josh"]');
+
+    if (btShow != null && btHidden != null && dataCamilla != null & dataJosh != null) {
+        btShow.forEach((bt, i) => {
+            bt.addEventListener('click', () => {
+                bt.classList.remove('active');
+                btHidden[i].classList.add('active');
+    
+                if (bt.classList.contains('camilla')) {
+                    dataCamilla.forEach((el) => {
+                        el.classList.add('active');
+        
+                        setTimeout(() => {
+                            el.classList.add('show');  
+                        }, 1000)
+                    });
+                } else if (bt.classList.contains('josh')) {
+                    dataJosh.forEach((el) => {
+                        el.classList.add('active');
+        
+                        setTimeout(() => {
+                            el.classList.add('show');  
+                        }, 1000)
+                    });
+                }
+            })
+        });
+    
+        btHidden.forEach((bt, i) => {
+            bt.addEventListener('click', () => {
+                bt.classList.remove('active');
+                btShow[i].classList.add('active');
+                
+                if (bt.classList.contains('camilla')) {
+                    dataCamilla.forEach((el) => {
+                        el.classList.remove('active');
+        
+                        setTimeout(() => {
+                            el.classList.remove('show');  
+                        }, 1000)
+                    });
+                } else if (bt.classList.contains('josh')) {
+                    dataJosh.forEach((el) => {
+                        el.classList.remove('active');
+        
+                        setTimeout(() => {
+                            el.classList.remove('show'); 
+                        }, 1000)
+                    });
+                }
+            })
+        });
+    }
+
+    
+
+    
+
+})();
 
 
 

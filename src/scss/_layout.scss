@@ -1888,8 +1888,6 @@ article.sec-articles {
                 content: '';
                 width: 100vw;
                 height: 500px;
-                background: url('../img/mandala.png') center center no-repeat;
-                background-size: cover;
                 position: absolute;
                 left: -32px;
                 top: 0;
@@ -1901,6 +1899,20 @@ article.sec-articles {
                     display: none;
                 }
 
+            }
+
+            &.josh {
+                &::after {
+                    background: url('../img/mandala_josh_br.png') center center no-repeat;
+                    background-size: cover;
+                }
+            }
+
+            &.camilla {
+                &::after {
+                    background: url('../img/mandala_camila_br.png') center center no-repeat;
+                    background-size: cover;
+                }
             }
         }
     }
